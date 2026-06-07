@@ -1,0 +1,8 @@
+.DS_Store
+*.swp
+*.swo
+*~
+
+# Claude Code local files (not the .claude-plugin/ manifest, which is tracked)
+.claude/
+CLAUDE.md
