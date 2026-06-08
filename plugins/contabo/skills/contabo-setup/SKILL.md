@@ -25,6 +25,21 @@ tar -xzf cntb_linux_amd64.tar.gz cntb
 sudo mv cntb /usr/local/bin/
 ```
 
+### Windows (PowerShell)
+
+Download the latest Windows build from [github.com/contabo/cntb/releases](https://github.com/contabo/cntb/releases), extract `cntb.exe`, and put it on your `PATH`:
+
+```powershell
+$dest = "$env:USERPROFILE\cntb"
+Invoke-WebRequest -Uri https://github.com/contabo/cntb/releases/latest/download/cntb_windows_amd64.zip -OutFile cntb.zip
+Expand-Archive -Path cntb.zip -DestinationPath $dest -Force
+# Add to PATH for this session (or add $dest permanently via System → Environment Variables):
+$env:Path += ";$dest"
+cntb --version
+```
+
+> Confirm the exact asset name on the releases page — it may be versioned (e.g. `cntb_<version>_windows_amd64.zip`) or use `arm64` on ARM devices. Alternatively, build from source with `go install github.com/contabo/cntb@latest`.
+
 ### Docker
 
 ```bash
