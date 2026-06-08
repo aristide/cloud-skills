@@ -16,6 +16,7 @@ A **Claude Code plugin marketplace** that lets you manage your infrastructure ac
 | **azure** | `az` | Auth/subscriptions, Virtual Machine lifecycle, status command |
 | **gcp** | `gcloud` | Auth/projects, Compute Engine lifecycle, status command |
 | **scaleway** | `scw` | Auth/profiles, Instance lifecycle, status command |
+| **contabo** | `cntb` | OAuth2 auth, VPS/VDS instance lifecycle, status command |
 
 Each provider plugin contributes auto-activating **skills** (the model loads them when your request matches), a **`/<provider>-status`** slash command, and an advisory **safety hook** that warns before destructive operations on that provider's CLI.
 
@@ -40,7 +41,8 @@ Each provider plugin contributes auto-activating **skills** (the model loads the
 /plugin install aws@cloud-skills
 /plugin install azure@cloud-skills
 /plugin install gcp@cloud-skills
-/plugin install scaleway@cloud-skills    # …or all of them
+/plugin install scaleway@cloud-skills
+/plugin install contabo@cloud-skills     # …or all of them
 ```
 
 There is no single "install all" command — install each provider you want. While developing locally you can point the marketplace at a path: `/plugin marketplace add ./cloud-skills`.
@@ -54,6 +56,7 @@ There is no single "install all" command — install each provider you want. Whi
 **Azure:** "Create a Standard_B1s Ubuntu VM in resource group web-rg" · `/azure-status`
 **GCP:** "Create an e2-micro Debian instance in europe-west1-b" · `/gcp-status`
 **Scaleway:** "Create a DEV1-S instance in fr-par-1" · `/scaleway-status`
+**Contabo:** "List my VPS instances and show which are stopped" · `/contabo-status`
 
 Because each safety hook only reacts to its own CLI, you can have several providers installed at once without warnings cross-firing.
 

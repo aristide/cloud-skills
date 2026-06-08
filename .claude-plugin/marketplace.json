@@ -43,6 +43,13 @@
       "description": "Scaleway CLI (scw) skills and safety hooks — authentication, Instance lifecycle, and an infrastructure status command",
       "version": "0.1.0",
       "keywords": ["scaleway", "scw", "instance", "cloud", "infrastructure", "devops"]
+    },
+    {
+      "name": "contabo",
+      "source": "contabo",
+      "description": "Contabo CLI (cntb) skills and safety hooks — OAuth2 authentication, VPS/VDS instance lifecycle, and an infrastructure status command",
+      "version": "0.1.0",
+      "keywords": ["contabo", "cntb", "vps", "vds", "cloud", "infrastructure", "devops"]
     }
   ]
 }
