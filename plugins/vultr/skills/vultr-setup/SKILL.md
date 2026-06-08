@@ -94,3 +94,7 @@ vultr-cli instance list -o json | jq '.instances[].id'
 
 - A powered-off Vultr instance **still bills** — destroy it with `vultr-cli instance delete <id>` to stop charges.
 - API calls require your current IP to be on the API access control list in the portal.
+
+## Official documentation
+
+See [`../../docs/README.md`](../../docs/README.md) in this plugin for curated links to the official vultr-cli reference, API docs, pricing, regions, and status pages.

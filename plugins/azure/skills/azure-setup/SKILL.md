@@ -123,3 +123,7 @@ ip=$(az vm list-ip-addresses -n myvm -g my-rg \
 | `--query <expr>` | JMESPath expression to filter/shape output |
 | `--no-wait` | Return immediately instead of polling the operation |
 | `--verbose` / `--debug` | Increase logging |
+
+## Official documentation
+
+See [`../../docs/README.md`](../../docs/README.md) in this plugin for curated links to the official Azure CLI reference, API docs, pricing, regions, and status pages.

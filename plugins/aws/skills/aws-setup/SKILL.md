@@ -120,3 +120,7 @@ aws ec2 describe-instances --filters "Name=instance-state-name,Values=running"
 | `--query <expr>` | JMESPath expression to filter/shape output |
 | `--no-cli-pager` | Disable the interactive pager (useful for scripting) |
 | `--dry-run` | (EC2) validate permissions without performing the action |
+
+## Official documentation
+
+See [`../../docs/README.md`](../../docs/README.md) in this plugin for curated links to the official AWS CLI reference, API docs, pricing, regions, and service-health pages.

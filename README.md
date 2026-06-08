@@ -90,11 +90,14 @@ cloud-skills/
 │   │   ├── skills/<prov>-setup,  <prov>-compute,  …one per domain the provider offers
 │   │   │            (networking, storage, security, dns, kubernetes, containers, serverless)
 │   │   ├── commands/<prov>-{status,deploy,cleanup}.md
-│   │   └── hooks/  (hooks.json + scripts/<prov>-safety.sh)
+│   │   ├── hooks/  (hooks.json + scripts/<prov>-safety.sh)
+│   │   └── docs/README.md        # curated links to the provider's official docs
 ├── templates/
 │   └── provider-template/        # copy-me scaffold for the next provider
-└── docs/
-    └── ADDING-A-PROVIDER.md       # step-by-step guide
+├── docs/
+│   └── ADDING-A-PROVIDER.md       # step-by-step guide
+├── LICENSE                       # this repository's license
+└── NOTICE                        # third-party notices for bundled material
 ```
 
 ---
@@ -107,7 +110,7 @@ Copy `templates/provider-template/` to `plugins/<provider>/`, replace the `__PRO
 
 ## Acknowledgements
 
-Some plugins bundle reference material or derive from a provider's official open-source CLI tooling, used under the respective licenses — see each plugin's `docs/` and the repository [LICENSE](LICENSE). (For example, the `hcloud` plugin's bundled reference docs come from the [hcloud CLI](https://github.com/hetznercloud/cli) by Hetzner Cloud GmbH under the MIT License, per `plugins/hcloud/docs/LICENSE`, building on the original [hcloud-skills](https://github.com/danjdewhurst/hcloud-skills) plugin by Daniel Dewhurst.)
+Some plugins bundle reference material or derive from a provider's official open-source CLI tooling, used under the respective licenses — bundled third-party notices are collected in [NOTICE](NOTICE), and the repository's own license is [LICENSE](LICENSE). (For example, the `hcloud` plugin's bundled reference docs come from the [hcloud CLI](https://github.com/hetznercloud/cli) by Hetzner Cloud GmbH under the MIT License, building on the original [hcloud-skills](https://github.com/danjdewhurst/hcloud-skills) plugin by Daniel Dewhurst.)
 
 ## License
 

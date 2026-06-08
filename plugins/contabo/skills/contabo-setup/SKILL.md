@@ -121,3 +121,7 @@ cntb get instance <instance-id> -o yaml
 - Contabo products are **subscriptions**. Creating an instance starts a billing contract; you stop billing by **cancelling** the instance (`cntb cancel instance <id>`), not by deleting a record.
 - **Regions** are coarse codes such as `EU`, `US-central`, `US-east`, `US-west`, `SIN`, `JPN`, `AUS`, `IND`.
 - **SSH keys and root passwords are stored as "secrets"** and referenced by id when creating instances — see the `contabo-compute` skill.
+
+## Official documentation
+
+See [`../../docs/README.md`](../../docs/README.md) in this plugin for curated links to the cntb CLI, the Contabo API, control panel, pricing, and status pages.

@@ -1,4 +1,14 @@
-The documentation in this directory is derived from the hcloud CLI project
+THIRD-PARTY NOTICES
+
+This repository's own license is in LICENSE. In addition, it bundles
+documentation derived from third-party projects, whose licenses are reproduced
+below.
+
+================================================================================
+plugins/hcloud/docs/ — Hetzner Cloud CLI reference documentation
+================================================================================
+
+This documentation is derived from the hcloud CLI project
 (https://github.com/hetznercloud/cli) and is used under the following license:
 
 MIT License

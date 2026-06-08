@@ -129,3 +129,7 @@ gcloud compute instances list --format=json | jq '.[].name'
 | `--filter <expr>` | Server-side filter expression |
 | `--quiet, -q` | Disable interactive prompts (assume defaults / yes) |
 | `--configuration <name>` | Use a specific named configuration |
+
+## Official documentation
+
+See [`../../docs/README.md`](../../docs/README.md) in this plugin for curated links to the official Google Cloud CLI reference, API docs, pricing, locations, and status pages.

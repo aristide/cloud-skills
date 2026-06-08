@@ -95,3 +95,7 @@ doctl compute droplet list --format ID,Name,PublicIPv4,Status --no-header
 | `--output text\|json` | Output format (default: text table) |
 | `--format <cols>` | Comma-separated columns to display |
 | `--no-header` | Omit the table header |
+
+## Official documentation
+
+See [`../../docs/README.md`](../../docs/README.md) in this plugin for curated links to the official doctl reference, API docs, pricing, regions, and status pages.

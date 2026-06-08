@@ -51,6 +51,7 @@ skills/<provider>-compute     skills/<provider>-storage      skills/<provider>-c
                               skills/<provider>-dns
 commands/<provider>-status.md   commands/<provider>-deploy.md   commands/<provider>-cleanup.md
 hooks/scripts/<provider>-safety.sh
+docs/README.md
 ```
 
 ## 3. Replace the placeholder tokens
@@ -63,7 +64,7 @@ Substitute these tokens everywhere inside the copied files:
 | `__PROVIDER_DISPLAY__` | human-readable name | `DigitalOcean` |
 | `__CLI__` | the CLI binary name | `doctl` |
 
-Then fill every file with real CLI content: `.claude-plugin/plugin.json` (name/description/keywords), each `skills/<provider>-*/SKILL.md`, each `commands/<provider>-*.md`, `hooks/hooks.json` (points at `scripts/<provider>-safety.sh`), and `hooks/scripts/<provider>-safety.sh` (the binary name + that provider's destructive verbs).
+Then fill every file with real CLI content: `.claude-plugin/plugin.json` (name/description/keywords), each `skills/<provider>-*/SKILL.md`, each `commands/<provider>-*.md`, `hooks/hooks.json` (points at `scripts/<provider>-safety.sh`), `hooks/scripts/<provider>-safety.sh` (the binary name + that provider's destructive verbs), and `docs/README.md` (curated links to the provider's official CLI reference, API, console, pricing, and status pages — links only, no copyrighted text). The `<provider>-setup` skill should end with a short "Official documentation" pointer to `docs/README.md`.
 
 ## 4. Fill in real CLI content
 

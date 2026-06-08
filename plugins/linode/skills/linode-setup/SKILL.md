@@ -88,3 +88,7 @@ linode-cli linodes list --text --format "id,label,status,ipv4,region" --no-heade
 | `--text --format <cols>` | Tab/space output with chosen columns |
 | `--no-headers` | Omit the header row |
 | `--all` | Return all columns |
+
+## Official documentation
+
+See [`../../docs/README.md`](../../docs/README.md) in this plugin for curated links to the official Linode CLI reference, API docs, pricing, regions, and status pages.

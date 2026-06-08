@@ -108,3 +108,7 @@ oci compute instance list --compartment-id <ocid> | jq '.data[]."display-name"'
 | `--output table\|json` | Output format (default: json) |
 | `--query <jmespath>` | Filter/shape the response |
 | `--auth <type>` | `api_key` (default) \| `session_token` \| `instance_principal` |
+
+## Official documentation
+
+See [`../../docs/README.md`](../../docs/README.md) in this plugin for curated links to the official OCI CLI reference, API docs, pricing, regions, and status pages.

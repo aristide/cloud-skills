@@ -103,3 +103,7 @@ openstack server show <name> -f yaml
 ## Note: account-level OVH resources
 
 For non–Public-Cloud resources (domains, dedicated servers, billing, IP failover, etc.) OVH exposes the **OVH API** (`https://api.ovh.com`, with application key/secret + consumer key) rather than OpenStack. Those are typically managed via the OVH API directly, the community `ovh` API clients, or Terraform's `ovh` provider. This plugin focuses on Public Cloud compute via OpenStack.
+
+## Official documentation
+
+See [`../../docs/README.md`](../../docs/README.md) in this plugin for curated links to the OpenStack client reference, OVHcloud Public Cloud guides, the OVH API, pricing, regions, and status pages.

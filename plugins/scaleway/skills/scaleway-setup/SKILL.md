@@ -104,3 +104,7 @@ scw instance server list -o table=ID,Name,State,PublicIP
 ```bash
 scw autocomplete install
 ```
+
+## Official documentation
+
+See [`../../docs/README.md`](../../docs/README.md) in this plugin for curated links to the official Scaleway CLI reference, API docs, pricing, regions, and status pages.
