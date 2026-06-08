@@ -18,7 +18,7 @@ Each plugin carries a **setup** and **compute** skill, **status / deploy / clean
 | **azure** | `az` | VMs, VNet, disks/Blob, Key Vault/RBAC, Azure DNS, AKS, Container Apps/ACI, Functions |
 | **gcp** | `gcloud` | Compute Engine, VPC, disks/Cloud Storage, IAM/SSL, Cloud DNS, GKE, Cloud Run, Cloud Functions |
 | **scaleway** | `scw` | Instances, VPC/LB, block/object storage, IAM, DNS, Kapsule, Serverless Containers, Functions |
-| **contabo** | `cntb` | VPS/VDS, private networks + firewall, object storage, secrets — *no DNS/K8s/containers/serverless* |
+| **contabo** | `cntb` | VPS/VDS, private networks + firewall, object storage, secrets — *DNS is control-panel-only (no CLI/API); no K8s/containers/serverless* |
 | **digitalocean** | `doctl` | Droplets, VPC/firewall/LB, volumes/Spaces, certs, DNS, DOKS, App Platform, Functions |
 | **linode** | `linode-cli` | Linodes, VPC/firewall/NodeBalancer, volumes/object storage, DNS, LKE — *no containers/serverless* |
 | **vultr** | `vultr-cli` | Instances, VPC/firewall/LB, block/object storage, DNS, VKE Kubernetes — *no containers or serverless* |

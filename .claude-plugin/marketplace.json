@@ -47,7 +47,7 @@
     {
       "name": "contabo",
       "source": "contabo",
-      "description": "Contabo (cntb) — VPS/VDS compute, private networks + cloud firewall, object storage, and SSH-key/secret security, plus status/deploy/cleanup commands and a safety hook (no managed DNS, Kubernetes, containers, or serverless)",
+      "description": "Contabo (cntb) — VPS/VDS compute, private networks + cloud firewall, object storage, and SSH-key/secret security, plus status/deploy/cleanup commands and a safety hook (DNS exists only in the Contabo control panel, not the cntb CLI/API; no managed Kubernetes, containers, or serverless)",
       "version": "0.1.0",
       "keywords": ["contabo", "cntb", "vps", "vds", "cloud", "infrastructure", "devops"]
     },
