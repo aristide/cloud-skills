@@ -1,0 +1,6 @@
+# Shell hook scripts must stay LF — bash chokes on CRLF line endings.
+*.sh text eol=lf
+
+# Keep these LF too for consistent cross-platform diffs.
+*.json text eol=lf
+*.md   text eol=lf
