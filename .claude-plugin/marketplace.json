@@ -1,6 +1,6 @@
 {
   "name": "cloud-skills",
-  "description": "Multi-cloud CLI plugins for Claude Code — manage Hetzner, AWS, Azure, GCP, and Scaleway through their official command-line tools. Install one provider or all of them.",
+  "description": "Multi-cloud CLI plugins for Claude Code — manage 11 providers (Hetzner, AWS, Azure, GCP, Scaleway, Contabo, DigitalOcean, Linode, Vultr, OVH, Oracle) through their official command-line tools. Each plugin covers compute, networking, storage, security, DNS, Kubernetes, containers, and serverless where the provider offers them, with guided deploy/cleanup commands and a safety hook. Install one provider or all of them.",
   "owner": {
     "name": "Aristide Mendo",
     "email": "mendoo.aristide@gmail.com"
@@ -12,79 +12,79 @@
     {
       "name": "hcloud",
       "source": "hcloud",
-      "description": "Hetzner Cloud CLI skills, commands, and safety hooks — servers, networking, storage, DNS, security, plus 260+ bundled reference pages",
+      "description": "Hetzner Cloud (hcloud) — servers, networking, storage, DNS, and security skills with status/deploy/cleanup commands, a safety hook, and 260+ bundled CLI reference pages",
       "version": "1.0.0",
       "keywords": ["hetzner", "hcloud", "cloud", "infrastructure", "devops"]
     },
     {
       "name": "aws",
       "source": "aws",
-      "description": "AWS CLI skills and safety hooks — authentication, EC2 compute lifecycle, and an infrastructure status command",
+      "description": "AWS (aws CLI) — EC2 compute, VPC networking, EBS/S3 storage, IAM/ACM security, Route 53 DNS, EKS, ECS/App Runner containers, and Lambda, plus status/deploy/cleanup commands and a safety hook",
       "version": "0.1.0",
-      "keywords": ["aws", "ec2", "amazon", "cloud", "infrastructure", "devops"]
+      "keywords": ["aws", "ec2", "amazon", "eks", "lambda", "cloud", "infrastructure", "devops"]
     },
     {
       "name": "azure",
       "source": "azure",
-      "description": "Azure CLI (az) skills and safety hooks — authentication, Virtual Machine lifecycle, and an infrastructure status command",
+      "description": "Azure (az CLI) — VM compute, VNet networking, disk/Blob storage, Key Vault/RBAC security, Azure DNS, AKS, Container Apps/Instances, and Functions, plus status/deploy/cleanup commands and a safety hook",
       "version": "0.1.0",
-      "keywords": ["azure", "az", "microsoft", "vm", "cloud", "infrastructure", "devops"]
+      "keywords": ["azure", "az", "microsoft", "vm", "aks", "functions", "cloud", "infrastructure", "devops"]
     },
     {
       "name": "gcp",
       "source": "gcp",
-      "description": "Google Cloud CLI (gcloud) skills and safety hooks — authentication, Compute Engine instance lifecycle, and an infrastructure status command",
+      "description": "Google Cloud (gcloud) — Compute Engine, VPC networking, disk/Cloud Storage, IAM/SSL security, Cloud DNS, GKE, Cloud Run, and Cloud Functions, plus status/deploy/cleanup commands and a safety hook",
       "version": "0.1.0",
-      "keywords": ["gcp", "gcloud", "google", "compute-engine", "cloud", "infrastructure", "devops"]
+      "keywords": ["gcp", "gcloud", "google", "gke", "cloud-run", "cloud-functions", "infrastructure", "devops"]
     },
     {
       "name": "scaleway",
       "source": "scaleway",
-      "description": "Scaleway CLI (scw) skills and safety hooks — authentication, Instance lifecycle, and an infrastructure status command",
+      "description": "Scaleway (scw) — Instances, VPC/Load Balancer networking, block/object storage, IAM security, DNS, Kapsule Kubernetes, Serverless Containers, and Functions, plus status/deploy/cleanup commands and a safety hook",
       "version": "0.1.0",
-      "keywords": ["scaleway", "scw", "instance", "cloud", "infrastructure", "devops"]
+      "keywords": ["scaleway", "scw", "instance", "kapsule", "serverless", "cloud", "infrastructure", "devops"]
     },
     {
       "name": "contabo",
       "source": "contabo",
-      "description": "Contabo CLI (cntb) skills and safety hooks — OAuth2 authentication, VPS/VDS instance lifecycle, and an infrastructure status command",
+      "description": "Contabo (cntb) — VPS/VDS compute, private networks + cloud firewall, object storage, and SSH-key/secret security, plus status/deploy/cleanup commands and a safety hook (no managed DNS, Kubernetes, containers, or serverless)",
       "version": "0.1.0",
       "keywords": ["contabo", "cntb", "vps", "vds", "cloud", "infrastructure", "devops"]
     },
     {
       "name": "digitalocean",
       "source": "digitalocean",
-      "description": "DigitalOcean CLI (doctl) skills and safety hooks — authentication, Droplet lifecycle, and an infrastructure status command",
+      "description": "DigitalOcean (doctl) — Droplets, VPC/firewall/load-balancer networking, volumes/Spaces storage, SSH-key/certificate security, DNS, DOKS Kubernetes, App Platform, and Functions, plus status/deploy/cleanup commands and a safety hook",
       "version": "0.1.0",
-      "keywords": ["digitalocean", "doctl", "droplet", "cloud", "infrastructure", "devops"]
+      "keywords": ["digitalocean", "doctl", "droplet", "doks", "app-platform", "cloud", "infrastructure", "devops"]
     },
     {
       "name": "linode",
       "source": "linode",
-      "description": "Linode / Akamai CLI (linode-cli) skills and safety hooks — authentication, Linode instance lifecycle, and an infrastructure status command",
+      "description": "Linode / Akamai (linode-cli) — Linodes, VPC/firewall/NodeBalancer networking, volumes/object storage, SSH-key security, DNS, and LKE Kubernetes, plus status/deploy/cleanup commands and a safety hook (no managed containers or serverless)",
       "version": "0.1.0",
-      "keywords": ["linode", "akamai", "linode-cli", "instance", "cloud", "infrastructure", "devops"]
+      "keywords": ["linode", "akamai", "linode-cli", "instance", "lke", "cloud", "infrastructure", "devops"]
     },
     {
       "name": "vultr",
       "source": "vultr",
-      "description": "Vultr CLI (vultr-cli) skills and safety hooks — authentication, instance lifecycle, and an infrastructure status command",
+      "description": "Vultr (vultr-cli) — Instances, VPC/firewall/load-balancer networking, block/object storage, SSH-key security, DNS, VKE Kubernetes, and Container Registry, plus status/deploy/cleanup commands and a safety hook (no serverless/FaaS)",
       "version": "0.1.0",
-      "keywords": ["vultr", "vultr-cli", "instance", "cloud", "infrastructure", "devops"]
+      "keywords": ["vultr", "vultr-cli", "instance", "vke", "cloud", "infrastructure", "devops"]
     },
     {
       "name": "ovh",
       "source": "ovh",
-      "description": "OVHcloud Public Cloud skills and safety hooks (OpenStack-based) — openstack auth, instance lifecycle, and an infrastructure status command",
+      "description": "OVHcloud Public Cloud (OpenStack / openstack) — instances, networking, block/object storage, and keypair/identity security, plus status/deploy/cleanup commands and a safety hook (DNS and Managed Kubernetes are via the OVH API/Terraform, not openstack)",
       "version": "0.1.0",
       "keywords": ["ovh", "ovhcloud", "openstack", "public-cloud", "instance", "infrastructure", "devops"]
     },
     {
       "name": "oracle",
       "source": "oracle",
-      "description": "Oracle Cloud Infrastructure CLI (oci) skills and safety hooks — authentication, Compute instance lifecycle, and an infrastructure status command",
+      "description": "Oracle Cloud Infrastructure (oci) — Compute, VCN networking, block/object storage, IAM/certificates security, DNS, OKE Kubernetes, Container Instances/registry, and Functions, plus status/deploy/cleanup commands and a safety hook",
       "version": "0.1.0",
-      "keywords": ["oracle", "oci", "oraclecloud", "compute", "cloud", "infrastructure", "devops"]
+      "keywords": ["oracle", "oci", "oraclecloud", "compute", "oke", "functions", "infrastructure", "devops"]
     }
   ]
 }

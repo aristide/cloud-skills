@@ -9,19 +9,21 @@ A **Claude Code plugin marketplace** that lets you manage your infrastructure ac
 
 ## Providers
 
+Every plugin carries the same skill set — **setup · compute · networking · storage · security · dns · kubernetes · containers · serverless** — plus **status / deploy / cleanup** commands and a safety hook. The Coverage column notes each provider's headline services and any domains it doesn't offer.
+
 | Plugin | CLI | Coverage |
 |--------|-----|----------|
-| **hcloud** | `hcloud` | Full Hetzner Cloud: servers, networking, storage, DNS, security, setup + 260+ bundled reference pages |
-| **aws** | `aws` | Auth/profiles/SSO, EC2 compute lifecycle, status command |
-| **azure** | `az` | Auth/subscriptions, Virtual Machine lifecycle, status command |
-| **gcp** | `gcloud` | Auth/projects, Compute Engine lifecycle, status command |
-| **scaleway** | `scw` | Auth/profiles, Instance lifecycle, status command |
-| **contabo** | `cntb` | OAuth2 auth, VPS/VDS instance lifecycle, status command |
-| **digitalocean** | `doctl` | Auth/contexts, Droplet lifecycle, status command |
-| **linode** | `linode-cli` | Auth/profiles, Linode instance lifecycle, status command |
-| **vultr** | `vultr-cli` | Auth, instance lifecycle, status command |
-| **ovh** | `openstack` | OVH Public Cloud (OpenStack): auth, instance lifecycle, status command |
-| **oracle** | `oci` | Auth/profiles/compartments, Compute instance lifecycle, status command |
+| **hcloud** | `hcloud` | Servers, networking, storage, DNS, security + 260+ bundled reference pages |
+| **aws** | `aws` | EC2, VPC, EBS/S3, IAM/ACM, Route 53, EKS, ECS/App Runner, Lambda |
+| **azure** | `az` | VMs, VNet, disks/Blob, Key Vault/RBAC, Azure DNS, AKS, Container Apps/ACI, Functions |
+| **gcp** | `gcloud` | Compute Engine, VPC, disks/Cloud Storage, IAM/SSL, Cloud DNS, GKE, Cloud Run, Cloud Functions |
+| **scaleway** | `scw` | Instances, VPC/LB, block/object storage, IAM, DNS, Kapsule, Serverless Containers, Functions |
+| **contabo** | `cntb` | VPS/VDS, private networks + firewall, object storage, secrets — *no DNS/K8s/containers/serverless* |
+| **digitalocean** | `doctl` | Droplets, VPC/firewall/LB, volumes/Spaces, certs, DNS, DOKS, App Platform, Functions |
+| **linode** | `linode-cli` | Linodes, VPC/firewall/NodeBalancer, volumes/object storage, DNS, LKE — *no containers/serverless* |
+| **vultr** | `vultr-cli` | Instances, VPC/firewall/LB, block/object storage, DNS, VKE, Container Registry — *no serverless* |
+| **ovh** | `openstack` | OVH Public Cloud: instances, networking, block/object storage, keypairs — *DNS & Managed K8s via OVH API/Terraform* |
+| **oracle** | `oci` | Compute, VCN, block/object storage, IAM/certs, DNS, OKE, Container Instances, Functions |
 
 Each provider plugin contributes auto-activating **skills** (the model loads them when your request matches), a **`/<provider>-status`** slash command, and an advisory **safety hook** that warns before destructive operations on that provider's CLI.
 
@@ -35,7 +37,7 @@ Each provider plugin contributes auto-activating **skills** (the model loads the
 
 - [Claude Code](https://docs.anthropic.com/en/docs/claude-code)
 - The official CLI for each provider you install, authenticated:
-  `hcloud` · `aws` · `az` · `gcloud` · `scw` (the `*-setup` skill in each plugin walks you through it)
+  `hcloud` · `aws` · `az` · `gcloud` · `scw` · `cntb` · `doctl` · `linode-cli` · `vultr-cli` · `openstack` (OVH) · `oci` (the `*-setup` skill in each plugin walks you through it)
 
 ### Add the marketplace, then install providers
 
@@ -83,14 +85,13 @@ Because each safety hook only reacts to its own CLI, you can have several provid
 cloud-skills/
 ├── .claude-plugin/
 │   └── marketplace.json          # marketplace manifest (lists every provider plugin)
-├── plugins/
-│   ├── hcloud/                   # one installable plugin per provider
+├── plugins/                     # one installable plugin per provider
+│   ├── hcloud/                   # the Hetzner plugin (+ 260+ bundled reference pages under docs/)
+│   ├── aws/  azure/  gcp/  scaleway/  contabo/
+│   ├── digitalocean/  linode/  vultr/  ovh/  oracle/
 │   │   ├── .claude-plugin/plugin.json
-│   │   ├── skills/  commands/  hooks/  docs/
-│   ├── aws/  azure/  gcp/  scaleway/
-│   │   ├── .claude-plugin/plugin.json
-│   │   ├── skills/<prov>-setup/  skills/<prov>-compute/
-│   │   ├── commands/<prov>-status.md
+│   │   ├── skills/<prov>-{setup,compute,networking,storage,security,dns,kubernetes,containers,serverless}/SKILL.md
+│   │   ├── commands/<prov>-{status,deploy,cleanup}.md
 │   │   └── hooks/  (hooks.json + scripts/<prov>-safety.sh)
 ├── templates/
 │   └── provider-template/        # copy-me scaffold for the next provider
