@@ -68,7 +68,7 @@ scw block snapshot get <snapshot-id> zone=fr-par-1
 
 # Create a new volume from a snapshot
 scw block volume create \
-  from-snapshot.id=<snapshot-id> \
+  from-snapshot.snapshot-id=<snapshot-id> \
   name=restored-volume \
   zone=fr-par-1
 

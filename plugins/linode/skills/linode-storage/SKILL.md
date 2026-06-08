@@ -95,11 +95,15 @@ linode-cli object-storage buckets-create \
   --region us-east \
   --label my-bucket
 
-# View bucket details
-linode-cli object-storage buckets-view <region-id> <bucket-label>
+# View bucket details (subcommand name varies by CLI version — confirm with:
+#   linode-cli object-storage --help
+# The obj plugin equivalent is always available:
+linode-cli obj ls                          # lists all buckets with region info
 
-# List objects in a bucket
-linode-cli object-storage object-list <region-id> <bucket-label>
+# List objects in a bucket (obj plugin — well-documented)
+linode-cli obj ls <bucket-label>
+# API-derived equivalent (confirm availability with linode-cli object-storage --help):
+# linode-cli object-storage object-list <region-id> <bucket-label>
 
 # Delete a bucket (must be empty first)
 linode-cli object-storage buckets-delete <region-id> <bucket-label>

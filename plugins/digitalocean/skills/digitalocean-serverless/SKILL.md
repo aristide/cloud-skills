@@ -113,14 +113,22 @@ Then deploy:
 doctl serverless deploy my-project
 ```
 
-To inspect existing triggers (read-only):
+To inspect triggers at runtime, `doctl serverless triggers list` and `doctl serverless triggers get` exist in the doctl source (merged in PR #1232, Sept 2022) but are **not listed in the official docs** and were noted as hidden at the time of introduction. They do not appear on the reference page as of 2026 and have no public documentation page. Use with caution — they may work on your installed version, but they are not a guaranteed public API:
 
 ```bash
-# List triggers in the connected namespace
+# May work but is not officially documented — hidden/unlisted command
 doctl serverless triggers list
 
-# Get details of a specific trigger
+# May work but is not officially documented — hidden/unlisted command
 doctl serverless triggers get my-trigger
+```
+
+The reliable alternative for inspecting scheduled-function activity is activation logs:
+
+```bash
+# Show recent activations (includes trigger-fired runs)
+doctl serverless activations list
+doctl serverless activations logs hello/world
 ```
 
 To remove a trigger, remove it from `project.yml` and redeploy, or undeploy the function:

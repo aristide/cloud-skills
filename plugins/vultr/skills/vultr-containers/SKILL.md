@@ -42,8 +42,11 @@ vultr-cli container-registry create \
 vultr-cli container-registry list
 vultr-cli container-registry get    <registry-id>
 vultr-cli container-registry update <registry-id> --plan business
+vultr-cli container-registry update <registry-id> --public false
 vultr-cli container-registry delete <registry-id>
 ```
+
+`container-registry update` accepts `--plan` (`-p`) and `--public` (`-b`); both are optional and can be combined or used individually.
 
 ## Docker Credentials
 
