@@ -1,0 +1,11 @@
+{
+  "name": "gcp",
+  "version": "0.1.0",
+  "description": "Google Cloud CLI (gcloud) skills, status command, and safety hook for Claude Code — authentication and Compute Engine instance lifecycle",
+  "author": {
+    "name": "Aristide Mendo",
+    "url": "https://github.com/mendoo"
+  },
+  "license": "MIT",
+  "keywords": ["gcp", "gcloud", "google", "compute-engine", "cloud", "infrastructure", "devops"]
+}

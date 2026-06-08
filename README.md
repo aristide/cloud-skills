@@ -1,40 +1,25 @@
-# hcloud for Claude Code
+# cloud-skills — multi-cloud CLI plugins for Claude Code
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
-[![Claude Code Plugin](https://img.shields.io/badge/Claude_Code-Plugin-blueviolet)](https://docs.anthropic.com/en/docs/claude-code)
-[![Hetzner Cloud](https://img.shields.io/badge/Hetzner-Cloud-d50c2d)](https://www.hetzner.com/cloud)
+[![Claude Code Marketplace](https://img.shields.io/badge/Claude_Code-Marketplace-blueviolet)](https://docs.anthropic.com/en/docs/claude-code)
 
-A **Claude Code plugin** that gives Claude full knowledge of the [Hetzner Cloud CLI](https://github.com/hetznercloud/cli) (`hcloud`). Manage your entire Hetzner Cloud infrastructure through natural conversation — servers, networks, DNS, storage, and more.
+A **Claude Code plugin marketplace** that lets you manage your infrastructure across cloud providers through natural conversation — each provider wrapped as its own installable plugin around its official CLI. **Install just the providers you use, or all of them.**
 
 ---
 
-## What's Included
+## Providers
 
-### Skills
+| Plugin | CLI | Coverage |
+|--------|-----|----------|
+| **hcloud** | `hcloud` | Full Hetzner Cloud: servers, networking, storage, DNS, security, setup + 260+ bundled reference pages |
+| **aws** | `aws` | Auth/profiles/SSO, EC2 compute lifecycle, status command |
+| **azure** | `az` | Auth/subscriptions, Virtual Machine lifecycle, status command |
+| **gcp** | `gcloud` | Auth/projects, Compute Engine lifecycle, status command |
+| **scaleway** | `scw` | Auth/profiles, Instance lifecycle, status command |
 
-Skills activate automatically when Claude detects a relevant task. No manual invocation needed.
+Each provider plugin contributes auto-activating **skills** (the model loads them when your request matches), a **`/<provider>-status`** slash command, and an advisory **safety hook** that warns before destructive operations on that provider's CLI.
 
-| Skill | Coverage |
-|-------|----------|
-| **hcloud-servers** | Server lifecycle, power management, SSH access, rescue mode, backups, snapshots, images, placement groups, ISOs, locations, datacenters |
-| **hcloud-networking** | Networks, subnets, routes, firewalls, floating IPs, primary IPs, load balancers, vSwitch |
-| **hcloud-storage** | Volumes (block storage), storage boxes, subaccounts, snapshots |
-| **hcloud-dns** | DNS zones, RRSets, zone file import/export, TTL, nameservers |
-| **hcloud-security** | SSH keys, TLS certificates (uploaded & managed), protection, reverse DNS, labels |
-| **hcloud-setup** | Installation, shell completion, contexts, config, API tokens, output formatting |
-| **hcloud-reference** | Full index to 260+ bundled CLI reference pages for deep lookups |
-
-### Slash Commands
-
-| Command | Description |
-|---------|-------------|
-| `/hcloud-status` | Scan all resource types and present a summary of your infrastructure |
-| `/hcloud-deploy` | Guided interactive server deployment with smart defaults |
-| `/hcloud-cleanup` | Find orphaned resources (unattached volumes, unassigned IPs, etc.) and clean up |
-
-### Safety Hook
-
-A `PreToolUse` hook monitors all Bash commands for destructive `hcloud` operations — `delete`, `poweroff`, `shutdown`, `reset`, `disable-protection`, and more. When detected, it injects a warning into Claude's context so it confirms the action with you before proceeding.
+> The `hcloud` plugin is feature-complete. `aws`, `azure`, `gcp`, and `scaleway` ship a **skeleton + core compute** (auth + instance lifecycle) and are designed to be extended — see [Adding a provider](docs/ADDING-A-PROVIDER.md).
 
 ---
 
@@ -42,112 +27,71 @@ A `PreToolUse` hook monitors all Bash commands for destructive `hcloud` operatio
 
 ### Prerequisites
 
-- [Claude Code](https://docs.anthropic.com/en/docs/claude-code) installed
-- [hcloud CLI](https://github.com/hetznercloud/cli) installed and configured with at least one context
+- [Claude Code](https://docs.anthropic.com/en/docs/claude-code)
+- The official CLI for each provider you install, authenticated:
+  `hcloud` · `aws` · `az` · `gcloud` · `scw` (the `*-setup` skill in each plugin walks you through it)
 
-### Install the Plugin
+### Add the marketplace, then install providers
 
-```bash
-claude plugin add danjdewhurst/hcloud-skills
+```text
+/plugin marketplace add <owner>/cloud-skills
+
+/plugin install hcloud@cloud-skills      # one provider…
+/plugin install aws@cloud-skills
+/plugin install azure@cloud-skills
+/plugin install gcp@cloud-skills
+/plugin install scaleway@cloud-skills    # …or all of them
 ```
 
-That's it. Skills, commands, and the safety hook activate automatically.
-
-### Verify
-
-Open Claude Code and run:
-
-```
-/hcloud-status
-```
-
-You should see a summary of your Hetzner Cloud resources.
+There is no single "install all" command — install each provider you want. While developing locally you can point the marketplace at a path: `/plugin marketplace add ./cloud-skills`.
 
 ---
 
-## Usage Examples
+## Usage examples
 
-**Deploy a server:**
-> "Spin up an Ubuntu server in Nuremberg for a web app"
+**Hetzner:** "Spin up an Ubuntu server in Nuremberg" · `/hcloud-status`
+**AWS:** "Launch a t3.micro from the latest Amazon Linux AMI in eu-central-1" · `/aws-status`
+**Azure:** "Create a Standard_B1s Ubuntu VM in resource group web-rg" · `/azure-status`
+**GCP:** "Create an e2-micro Debian instance in europe-west1-b" · `/gcp-status`
+**Scaleway:** "Create a DEV1-S instance in fr-par-1" · `/scaleway-status`
 
-**Check infrastructure:**
-> `/hcloud-status`
-
-**Network setup:**
-> "Create a private network 10.0.0.0/16 with a cloud subnet, then attach my web servers to it"
-
-**DNS management:**
-> "Set up DNS for example.com — add A records pointing to my server's IP"
-
-**Load balancing:**
-> "Create a load balancer with HTTP health checks targeting my servers labeled role=web"
-
-**Clean up:**
-> `/hcloud-cleanup`
+Because each safety hook only reacts to its own CLI, you can have several providers installed at once without warnings cross-firing.
 
 ---
 
-## What Claude Can Do
-
-With this plugin, Claude has embedded knowledge of **every `hcloud` command, flag, and resource type** — no internet lookup needed. It can:
-
-- Create and manage servers, networks, firewalls, volumes, DNS zones, load balancers, and more
-- Handle complex multi-step operations (deploy server + attach network + configure firewall + set DNS)
-- Use JSON output and `jq` for programmatic workflows
-- Reference the full bundled CLI manual for obscure flags or edge cases
-- Warn you before any destructive operation touches your infrastructure
-
----
-
-## Project Structure
+## Repository layout
 
 ```
-hcloud-skills/
+cloud-skills/
 ├── .claude-plugin/
-│   └── plugin.json          # Plugin manifest
-├── skills/
-│   ├── hcloud-servers/      # Compute & server management
-│   ├── hcloud-networking/   # Networks, firewalls, IPs, load balancers
-│   ├── hcloud-storage/      # Volumes & storage boxes
-│   ├── hcloud-dns/          # DNS zones & records
-│   ├── hcloud-security/     # SSH keys, certs, protection, labels
-│   ├── hcloud-setup/        # Installation & configuration
-│   └── hcloud-reference/    # Full CLI reference index
-├── commands/
-│   ├── hcloud-status.md     # Infrastructure overview
-│   ├── hcloud-deploy.md     # Guided deployment
-│   └── hcloud-cleanup.md    # Resource cleanup
-├── hooks/
-│   ├── hooks.json           # Hook configuration
-│   └── scripts/
-│       └── hcloud-safety.sh # Destructive operation warnings
+│   └── marketplace.json          # marketplace manifest (lists every provider plugin)
+├── plugins/
+│   ├── hcloud/                   # one installable plugin per provider
+│   │   ├── .claude-plugin/plugin.json
+│   │   ├── skills/  commands/  hooks/  docs/
+│   ├── aws/  azure/  gcp/  scaleway/
+│   │   ├── .claude-plugin/plugin.json
+│   │   ├── skills/<prov>-setup/  skills/<prov>-compute/
+│   │   ├── commands/<prov>-status.md
+│   │   └── hooks/  (hooks.json + scripts/<prov>-safety.sh)
+├── templates/
+│   └── provider-template/        # copy-me scaffold for the next provider
 └── docs/
-    ├── reference/manual/    # 260+ CLI reference pages
-    ├── tutorials/           # Getting started guides
-    └── guides/              # Usage guides
+    └── ADDING-A-PROVIDER.md       # step-by-step guide
 ```
 
 ---
 
-## Contributing
+## Adding a provider
 
-Contributions are welcome! If you find a missing command, incorrect flag, or want to add a new workflow:
-
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Submit a pull request
-
-The skills are markdown files — no build step required.
+Copy `templates/provider-template/` to `plugins/<provider>/`, replace the `__PROVIDER__` / `__CLI__` placeholders with the real CLI and commands, and add one entry to `marketplace.json`. Full instructions: **[docs/ADDING-A-PROVIDER.md](docs/ADDING-A-PROVIDER.md)**.
 
 ---
 
 ## Acknowledgements
 
-The bundled CLI reference documentation in `docs/` is derived from the [hcloud CLI](https://github.com/hetznercloud/cli) project by [Hetzner Cloud GmbH](https://www.hetzner.com/cloud), used under the [MIT License](docs/LICENSE).
-
----
+The bundled `hcloud` plugin and its reference documentation under `plugins/hcloud/docs/` are derived from the [hcloud CLI](https://github.com/hetznercloud/cli) project by [Hetzner Cloud GmbH](https://www.hetzner.com/cloud), used under the MIT License (`plugins/hcloud/docs/LICENSE`), and from the original [hcloud-skills](https://github.com/danjdewhurst/hcloud-skills) plugin by Daniel Dewhurst.
 
 ## License
 
-[MIT](LICENSE) &copy; [Daniel Dewhurst](https://github.com/danjdewhurst)
+[MIT](LICENSE)

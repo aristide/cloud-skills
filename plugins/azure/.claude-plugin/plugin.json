@@ -1,0 +1,11 @@
+{
+  "name": "azure",
+  "version": "0.1.0",
+  "description": "Azure CLI (az) skills, status command, and safety hook for Claude Code — authentication and Virtual Machine lifecycle",
+  "author": {
+    "name": "Aristide Mendo",
+    "url": "https://github.com/mendoo"
+  },
+  "license": "MIT",
+  "keywords": ["azure", "az", "microsoft", "vm", "cloud", "infrastructure", "devops"]
+}

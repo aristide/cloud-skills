@@ -1,26 +1,48 @@
 {
-  "name": "hcloud-skills",
-  "description": "Hetzner Cloud CLI plugin for Claude Code — skills, commands, and safety hooks",
+  "name": "cloud-skills",
+  "description": "Multi-cloud CLI plugins for Claude Code — manage Hetzner, AWS, Azure, GCP, and Scaleway through their official command-line tools. Install one provider or all of them.",
   "owner": {
-    "name": "Daniel Dewhurst",
-    "url": "https://github.com/danjdewhurst"
+    "name": "Aristide Mendo",
+    "email": "mendoo.aristide@gmail.com"
+  },
+  "metadata": {
+    "pluginRoot": "./plugins"
   },
   "plugins": [
     {
       "name": "hcloud",
-      "source": {
-        "source": "url",
-        "url": "https://github.com/danjdewhurst/hcloud-skills.git"
-      },
-      "description": "Hetzner Cloud CLI skills, commands, and safety hooks for Claude Code",
+      "source": "hcloud",
+      "description": "Hetzner Cloud CLI skills, commands, and safety hooks — servers, networking, storage, DNS, security, plus 260+ bundled reference pages",
       "version": "1.0.0",
-      "author": {
-        "name": "Daniel Dewhurst",
-        "url": "https://github.com/danjdewhurst"
-      },
-      "repository": "https://github.com/danjdewhurst/hcloud-skills",
-      "license": "MIT",
       "keywords": ["hetzner", "hcloud", "cloud", "infrastructure", "devops"]
+    },
+    {
+      "name": "aws",
+      "source": "aws",
+      "description": "AWS CLI skills and safety hooks — authentication, EC2 compute lifecycle, and an infrastructure status command",
+      "version": "0.1.0",
+      "keywords": ["aws", "ec2", "amazon", "cloud", "infrastructure", "devops"]
+    },
+    {
+      "name": "azure",
+      "source": "azure",
+      "description": "Azure CLI (az) skills and safety hooks — authentication, Virtual Machine lifecycle, and an infrastructure status command",
+      "version": "0.1.0",
+      "keywords": ["azure", "az", "microsoft", "vm", "cloud", "infrastructure", "devops"]
+    },
+    {
+      "name": "gcp",
+      "source": "gcp",
+      "description": "Google Cloud CLI (gcloud) skills and safety hooks — authentication, Compute Engine instance lifecycle, and an infrastructure status command",
+      "version": "0.1.0",
+      "keywords": ["gcp", "gcloud", "google", "compute-engine", "cloud", "infrastructure", "devops"]
+    },
+    {
+      "name": "scaleway",
+      "source": "scaleway",
+      "description": "Scaleway CLI (scw) skills and safety hooks — authentication, Instance lifecycle, and an infrastructure status command",
+      "version": "0.1.0",
+      "keywords": ["scaleway", "scw", "instance", "cloud", "infrastructure", "devops"]
     }
   ]
 }

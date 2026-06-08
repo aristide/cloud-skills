@@ -1,0 +1,11 @@
+{
+  "name": "__PROVIDER__",
+  "version": "0.1.0",
+  "description": "__PROVIDER_DISPLAY__ CLI (__CLI__) skills, status command, and safety hook for Claude Code — authentication and core compute lifecycle",
+  "author": {
+    "name": "Aristide Mendo",
+    "url": "https://github.com/mendoo"
+  },
+  "license": "MIT",
+  "keywords": ["__PROVIDER__", "__CLI__", "cloud", "infrastructure", "devops"]
+}
