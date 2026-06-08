@@ -5,83 +5,80 @@
     "name": "Aristide Mendo",
     "email": "mendoo.aristide@gmail.com"
   },
-  "metadata": {
-    "pluginRoot": "./plugins"
-  },
   "plugins": [
     {
       "name": "hcloud",
-      "source": "hcloud",
+      "source": "./plugins/hcloud",
       "description": "Hetzner Cloud (hcloud) — servers, networking, storage, DNS, and security skills with status/deploy/cleanup commands, a safety hook, and 260+ bundled CLI reference pages",
       "version": "1.0.0",
       "keywords": ["hetzner", "hcloud", "cloud", "infrastructure", "devops"]
     },
     {
       "name": "aws",
-      "source": "aws",
+      "source": "./plugins/aws",
       "description": "AWS (aws CLI) — EC2 compute, VPC networking, EBS/S3 storage, IAM/ACM security, Route 53 DNS, EKS, ECS/App Runner containers, and Lambda, plus status/deploy/cleanup commands and a safety hook",
       "version": "0.1.0",
       "keywords": ["aws", "ec2", "amazon", "eks", "lambda", "cloud", "infrastructure", "devops"]
     },
     {
       "name": "azure",
-      "source": "azure",
+      "source": "./plugins/azure",
       "description": "Azure (az CLI) — VM compute, VNet networking, disk/Blob storage, Key Vault/RBAC security, Azure DNS, AKS, Container Apps/Instances, and Functions, plus status/deploy/cleanup commands and a safety hook",
       "version": "0.1.0",
       "keywords": ["azure", "az", "microsoft", "vm", "aks", "functions", "cloud", "infrastructure", "devops"]
     },
     {
       "name": "gcp",
-      "source": "gcp",
+      "source": "./plugins/gcp",
       "description": "Google Cloud (gcloud) — Compute Engine, VPC networking, disk/Cloud Storage, IAM/SSL security, Cloud DNS, GKE, Cloud Run, and Cloud Functions, plus status/deploy/cleanup commands and a safety hook",
       "version": "0.1.0",
       "keywords": ["gcp", "gcloud", "google", "gke", "cloud-run", "cloud-functions", "infrastructure", "devops"]
     },
     {
       "name": "scaleway",
-      "source": "scaleway",
+      "source": "./plugins/scaleway",
       "description": "Scaleway (scw) — Instances, VPC/Load Balancer networking, block/object storage, IAM security, DNS, Kapsule Kubernetes, Serverless Containers, and Functions, plus status/deploy/cleanup commands and a safety hook",
       "version": "0.1.0",
       "keywords": ["scaleway", "scw", "instance", "kapsule", "serverless", "cloud", "infrastructure", "devops"]
     },
     {
       "name": "contabo",
-      "source": "contabo",
+      "source": "./plugins/contabo",
       "description": "Contabo (cntb) — VPS/VDS compute, private networks + cloud firewall, object storage, and SSH-key/secret security, plus status/deploy/cleanup commands and a safety hook (DNS exists only in the Contabo control panel, not the cntb CLI/API; no managed Kubernetes, containers, or serverless)",
       "version": "0.1.0",
       "keywords": ["contabo", "cntb", "vps", "vds", "cloud", "infrastructure", "devops"]
     },
     {
       "name": "digitalocean",
-      "source": "digitalocean",
+      "source": "./plugins/digitalocean",
       "description": "DigitalOcean (doctl) — Droplets, VPC/firewall/load-balancer networking, volumes/Spaces storage, SSH-key/certificate security, DNS, DOKS Kubernetes, App Platform, and Functions, plus status/deploy/cleanup commands and a safety hook",
       "version": "0.1.0",
       "keywords": ["digitalocean", "doctl", "droplet", "doks", "app-platform", "cloud", "infrastructure", "devops"]
     },
     {
       "name": "linode",
-      "source": "linode",
+      "source": "./plugins/linode",
       "description": "Linode / Akamai (linode-cli) — Linodes, VPC/firewall/NodeBalancer networking, volumes/object storage, SSH-key security, DNS, and LKE Kubernetes, plus status/deploy/cleanup commands and a safety hook (no managed containers or serverless)",
       "version": "0.1.0",
       "keywords": ["linode", "akamai", "linode-cli", "instance", "lke", "cloud", "infrastructure", "devops"]
     },
     {
       "name": "vultr",
-      "source": "vultr",
+      "source": "./plugins/vultr",
       "description": "Vultr (vultr-cli) — Instances, VPC/firewall/load-balancer networking, block/object storage, SSH-key security, DNS, and VKE Kubernetes, plus status/deploy/cleanup commands and a safety hook (no managed containers or serverless)",
       "version": "0.1.0",
       "keywords": ["vultr", "vultr-cli", "instance", "vke", "cloud", "infrastructure", "devops"]
     },
     {
       "name": "ovh",
-      "source": "ovh",
+      "source": "./plugins/ovh",
       "description": "OVHcloud Public Cloud (OpenStack / openstack) — instances, networking, block/object storage, and keypair/identity security, plus status/deploy/cleanup commands and a safety hook (DNS and Managed Kubernetes are via the OVH API/Terraform, not openstack; no containers or serverless)",
       "version": "0.1.0",
       "keywords": ["ovh", "ovhcloud", "openstack", "public-cloud", "instance", "infrastructure", "devops"]
     },
     {
       "name": "oracle",
-      "source": "oracle",
+      "source": "./plugins/oracle",
       "description": "Oracle Cloud Infrastructure (oci) — Compute, VCN networking, block/object storage, IAM/certificates security, DNS, OKE Kubernetes, Container Instances/registry, and Functions, plus status/deploy/cleanup commands and a safety hook",
       "version": "0.1.0",
       "keywords": ["oracle", "oci", "oraclecloud", "compute", "oke", "functions", "infrastructure", "devops"]
