@@ -39,9 +39,23 @@ Each provider plugin contributes auto-activating **skills** (the model loads the
 
 ### Add the marketplace, then install providers
 
-```text
-/plugin marketplace add aristide/cloud-skills
+Add the marketplace straight from this GitHub repo. Any of these forms work — the GitHub `owner/repo` shorthand or the full repository URL:
 
+```text
+/plugin marketplace add aristide/cloud-skills                       # GitHub shorthand
+/plugin marketplace add https://github.com/aristide/cloud-skills    # full GitHub URL
+/plugin marketplace add https://github.com/aristide/cloud-skills.git
+```
+
+From a terminal (non-interactive) you can do the same with the CLI:
+
+```bash
+claude plugin marketplace add aristide/cloud-skills
+```
+
+Then install the providers you want:
+
+```text
 /plugin install aws@cloud-skills          # one provider…
 /plugin install azure@cloud-skills
 /plugin install contabo@cloud-skills
