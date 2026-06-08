@@ -21,7 +21,7 @@ This repository is a **Claude Code marketplace** (`.claude-plugin/marketplace.js
 **Hook:**
 - `safety` — advisory warning before destructive operations on that provider's binary
 
-Not every provider offers every domain (e.g. a bare-VPS provider may have no managed Kubernetes, serverless, or DNS). When a domain doesn't apply, keep the skill but replace its body with a short note pointing to the alternative, or omit the skill entirely — don't invent commands that don't exist.
+Not every provider offers every domain (e.g. a bare-VPS provider may have no managed Kubernetes, serverless, or DNS). **Include a skill only for the domains the provider actually offers, and delete the rest** — don't ship a stub skill whose body just says "not offered", and never invent commands that don't exist. A service the provider offers through a *different* tool than the plugin's main CLI still counts as offered and keeps its skill (document the real path). `setup`, `compute`, and the `status`/`deploy`/`cleanup` commands are always present.
 
 Adding a provider is: copy the template, fill it in, register one entry in the marketplace.
 

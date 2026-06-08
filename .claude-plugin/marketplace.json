@@ -75,7 +75,7 @@
     {
       "name": "ovh",
       "source": "ovh",
-      "description": "OVHcloud Public Cloud (OpenStack / openstack) — instances, networking, block/object storage, and keypair/identity security, plus status/deploy/cleanup commands and a safety hook (DNS and Managed Kubernetes are via the OVH API/Terraform, not openstack)",
+      "description": "OVHcloud Public Cloud (OpenStack / openstack) — instances, networking, block/object storage, keypair/identity security, and container registry, plus status/deploy/cleanup commands and a safety hook (DNS and Managed Kubernetes are via the OVH API/Terraform, not openstack; no serverless/FaaS)",
       "version": "0.1.0",
       "keywords": ["ovh", "ovhcloud", "openstack", "public-cloud", "instance", "infrastructure", "devops"]
     },

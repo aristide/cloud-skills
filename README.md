@@ -9,7 +9,7 @@ A **Claude Code plugin marketplace** that lets you manage your infrastructure ac
 
 ## Providers
 
-Every plugin carries the same skill set — **setup · compute · networking · storage · security · dns · kubernetes · containers · serverless** — plus **status / deploy / cleanup** commands and a safety hook. The Coverage column notes each provider's headline services and any domains it doesn't offer.
+Each plugin carries a **setup** and **compute** skill, **status / deploy / cleanup** commands, and a safety hook, plus a skill for every additional domain the provider actually offers — drawn from **networking · storage · security · dns · kubernetes · containers · serverless**. A plugin only ships skills for services that exist (e.g. Contabo has no DNS/Kubernetes/containers/serverless skills); the Coverage column notes each provider's headline services and any gaps.
 
 | Plugin | CLI | Coverage |
 |--------|-----|----------|
@@ -22,7 +22,7 @@ Every plugin carries the same skill set — **setup · compute · networking · 
 | **digitalocean** | `doctl` | Droplets, VPC/firewall/LB, volumes/Spaces, certs, DNS, DOKS, App Platform, Functions |
 | **linode** | `linode-cli` | Linodes, VPC/firewall/NodeBalancer, volumes/object storage, DNS, LKE — *no containers/serverless* |
 | **vultr** | `vultr-cli` | Instances, VPC/firewall/LB, block/object storage, DNS, VKE, Container Registry — *no serverless* |
-| **ovh** | `openstack` | OVH Public Cloud: instances, networking, block/object storage, keypairs — *DNS & Managed K8s via OVH API/Terraform* |
+| **ovh** | `openstack` | OVH Public Cloud: instances, networking, block/object storage, keypairs, container registry — *DNS & Managed K8s via OVH API/Terraform; no serverless* |
 | **oracle** | `oci` | Compute, VCN, block/object storage, IAM/certs, DNS, OKE, Container Instances, Functions |
 
 Each provider plugin contributes auto-activating **skills** (the model loads them when your request matches), a **`/<provider>-status`** slash command, and an advisory **safety hook** that warns before destructive operations on that provider's CLI.
@@ -90,7 +90,8 @@ cloud-skills/
 │   ├── aws/  azure/  gcp/  scaleway/  contabo/
 │   ├── digitalocean/  linode/  vultr/  ovh/  oracle/
 │   │   ├── .claude-plugin/plugin.json
-│   │   ├── skills/<prov>-{setup,compute,networking,storage,security,dns,kubernetes,containers,serverless}/SKILL.md
+│   │   ├── skills/<prov>-setup,  <prov>-compute,  …one per domain the provider offers
+│   │   │            (networking, storage, security, dns, kubernetes, containers, serverless)
 │   │   ├── commands/<prov>-{status,deploy,cleanup}.md
 │   │   └── hooks/  (hooks.json + scripts/<prov>-safety.sh)
 ├── templates/

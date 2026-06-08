@@ -49,4 +49,4 @@ The registry endpoint and credentials are found in the OVH control panel. It is 
 
 ## Beyond the basics
 
-If you need serverless container execution, see the `ovh-serverless` skill for what OVH currently offers in that area. For orchestration at scale, the `ovh-kubernetes` skill is the primary path on OVH Public Cloud.
+OVH Public Cloud has no general-purpose FaaS/serverless product. For container orchestration at scale, the `ovh-kubernetes` skill (OVH Managed Kubernetes) is the primary path; otherwise run containers directly on instances.
