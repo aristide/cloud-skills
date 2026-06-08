@@ -4,7 +4,7 @@
   "description": "Scaleway CLI (scw) skills, status command, and safety hook for Claude Code — authentication and Instance lifecycle",
   "author": {
     "name": "Aristide Mendo",
-    "url": "https://github.com/mendoo"
+    "url": "https://github.com/aristide"
   },
   "license": "MIT",
   "keywords": ["scaleway", "scw", "instance", "cloud", "infrastructure", "devops"]

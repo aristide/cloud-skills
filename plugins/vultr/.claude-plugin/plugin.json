@@ -4,7 +4,7 @@
   "description": "Vultr CLI (vultr-cli) skills, status command, and safety hook for Claude Code — authentication and instance lifecycle",
   "author": {
     "name": "Aristide Mendo",
-    "url": "https://github.com/mendoo"
+    "url": "https://github.com/aristide"
   },
   "license": "MIT",
   "keywords": ["vultr", "vultr-cli", "instance", "cloud", "infrastructure", "devops"]

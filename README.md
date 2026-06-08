@@ -40,7 +40,7 @@ Each provider plugin contributes auto-activating **skills** (the model loads the
 ### Add the marketplace, then install providers
 
 ```text
-/plugin marketplace add <owner>/cloud-skills
+/plugin marketplace add aristide/cloud-skills
 
 /plugin install hcloud@cloud-skills      # one provider…
 /plugin install aws@cloud-skills

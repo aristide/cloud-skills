@@ -4,7 +4,7 @@
   "description": "Contabo CLI (cntb) skills, status command, and safety hook for Claude Code — authentication and VPS/VDS instance lifecycle",
   "author": {
     "name": "Aristide Mendo",
-    "url": "https://github.com/mendoo"
+    "url": "https://github.com/aristide"
   },
   "license": "MIT",
   "keywords": ["contabo", "cntb", "vps", "vds", "cloud", "infrastructure", "devops"]

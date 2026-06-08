@@ -4,7 +4,7 @@
   "description": "AWS CLI skills, status command, and safety hook for Claude Code — authentication and EC2 compute lifecycle",
   "author": {
     "name": "Aristide Mendo",
-    "url": "https://github.com/mendoo"
+    "url": "https://github.com/aristide"
   },
   "license": "MIT",
   "keywords": ["aws", "ec2", "amazon", "cloud", "infrastructure", "devops"]

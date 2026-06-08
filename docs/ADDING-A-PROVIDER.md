@@ -98,7 +98,7 @@ Confirm each `SKILL.md` and the status command have YAML frontmatter with `name`
 ## 7. Try it
 
 ```text
-/plugin marketplace add <owner>/cloud-skills      # or a local path while developing
+/plugin marketplace add aristide/cloud-skills      # or a local path while developing
 /plugin install <provider>@cloud-skills
 ```
 
