@@ -25,7 +25,7 @@ A **Claude Code plugin marketplace** that lets you manage your infrastructure ac
 
 Each provider plugin contributes auto-activating **skills** (the model loads them when your request matches), a **`/<provider>-status`** slash command, and an advisory **safety hook** that warns before destructive operations on that provider's CLI.
 
-> The `hcloud` plugin is feature-complete. `aws`, `azure`, `gcp`, and `scaleway` ship a **skeleton + core compute** (auth + instance lifecycle) and are designed to be extended — see [Adding a provider](docs/ADDING-A-PROVIDER.md).
+> Every provider plugin carries a uniform set of skills — **setup, compute, networking, storage, security, dns, kubernetes, containers, serverless** — plus **status / deploy / cleanup** commands and a safety hook. Where a provider doesn't offer a domain (e.g. Contabo has no managed Kubernetes), that skill says so and points to the alternative. `hcloud` is the most battle-tested (with 260+ bundled reference pages); the others are generated from the shared [template](templates/provider-template/) — see [Adding a provider](docs/ADDING-A-PROVIDER.md).
 
 ---
 

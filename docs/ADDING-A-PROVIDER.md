@@ -1,11 +1,27 @@
 # Adding a Cloud Provider
 
-This repository is a **Claude Code marketplace** (`.claude-plugin/marketplace.json`) that hosts one independently-installable **plugin per cloud provider** under `plugins/`. Each plugin wraps a provider's official CLI and gives Claude:
+This repository is a **Claude Code marketplace** (`.claude-plugin/marketplace.json`) that hosts one independently-installable **plugin per cloud provider** under `plugins/`. Each plugin wraps a provider's official CLI and gives Claude a consistent set of skills and commands:
 
-- a **setup/auth skill** — install + authenticate the CLI, select project/region,
-- a **core-compute skill** — create/list/start/stop/delete instances,
-- a **status slash command** — summarize resources,
-- a **safety hook** — warn before destructive operations on that provider's binary.
+**Skills** (auto-activating reference, one resource domain each):
+- `setup` — install + authenticate the CLI, select project/region, output format
+- `compute` — create/list/start/stop/delete instances, SSH, images, sizes
+- `networking` — networks/VPCs, firewalls/security groups, IPs, load balancers
+- `storage` — block volumes/disks, snapshots, object storage
+- `security` — SSH keys, TLS certificates, identity/roles, tags
+- `dns` — managed DNS zones and records
+- `kubernetes` — managed Kubernetes clusters and node pools
+- `containers` — serverless containers / container apps + registry
+- `serverless` — functions (FaaS)
+
+**Commands** (slash commands):
+- `status` — summarize all resources
+- `deploy` — guided interactive instance deployment
+- `cleanup` — find orphaned/idle resources that still bill
+
+**Hook:**
+- `safety` — advisory warning before destructive operations on that provider's binary
+
+Not every provider offers every domain (e.g. a bare-VPS provider may have no managed Kubernetes, serverless, or DNS). When a domain doesn't apply, keep the skill but replace its body with a short note pointing to the alternative, or omit the skill entirely — don't invent commands that don't exist.
 
 Adding a provider is: copy the template, fill it in, register one entry in the marketplace.
 
@@ -19,13 +35,22 @@ Use a short, lowercase, kebab-case `<provider>` id (e.g. `aws`, `azure`, `gcp`, 
 
 ## 2. Rename the placeholder paths
 
-The template uses `__PROVIDER__` in directory and file names. Rename them to your provider id:
+The template uses `__PROVIDER__` in directory and file names. Rename every one to your provider id. On macOS/Linux this one-liner does it:
+
+```bash
+cd plugins/<provider>
+find . -depth -name '*__PROVIDER__*' -execdir bash -c 'mv "$1" "${1//__PROVIDER__/<provider>}"' _ {} \;
+```
+
+The renamed layout (skills are directories, each with a `SKILL.md`):
 
 ```
-plugins/<provider>/skills/__PROVIDER__-setup     -> skills/<provider>-setup
-plugins/<provider>/skills/__PROVIDER__-compute   -> skills/<provider>-compute
-plugins/<provider>/commands/__PROVIDER__-status.md       -> commands/<provider>-status.md
-plugins/<provider>/hooks/scripts/__PROVIDER__-safety.sh  -> hooks/scripts/<provider>-safety.sh
+skills/<provider>-setup       skills/<provider>-networking   skills/<provider>-kubernetes
+skills/<provider>-compute     skills/<provider>-storage      skills/<provider>-containers
+                              skills/<provider>-security     skills/<provider>-serverless
+                              skills/<provider>-dns
+commands/<provider>-status.md   commands/<provider>-deploy.md   commands/<provider>-cleanup.md
+hooks/scripts/<provider>-safety.sh
 ```
 
 ## 3. Replace the placeholder tokens
@@ -38,13 +63,7 @@ Substitute these tokens everywhere inside the copied files:
 | `__PROVIDER_DISPLAY__` | human-readable name | `DigitalOcean` |
 | `__CLI__` | the CLI binary name | `doctl` |
 
-Files to edit:
-- `.claude-plugin/plugin.json` — name, description, keywords
-- `skills/<provider>-setup/SKILL.md` — real install + auth + scoping + output
-- `skills/<provider>-compute/SKILL.md` — real compute verbs and flags
-- `commands/<provider>-status.md` — real list commands
-- `hooks/hooks.json` — points at `scripts/<provider>-safety.sh`
-- `hooks/scripts/<provider>-safety.sh` — the binary name and the provider's destructive verbs
+Then fill every file with real CLI content: `.claude-plugin/plugin.json` (name/description/keywords), each `skills/<provider>-*/SKILL.md`, each `commands/<provider>-*.md`, `hooks/hooks.json` (points at `scripts/<provider>-safety.sh`), and `hooks/scripts/<provider>-safety.sh` (the binary name + that provider's destructive verbs).
 
 ## 4. Fill in real CLI content
 
@@ -87,4 +106,4 @@ Then confirm the `<provider>-setup` / `<provider>-compute` skills auto-activate 
 
 ## Going deeper
 
-The template ships the **skeleton + core compute** only. To add networking, storage, DNS, IAM, etc., create more skills in the same plugin (`skills/<provider>-networking/SKILL.md`, …) following the same naming and frontmatter conventions — exactly how the bundled `hcloud` plugin is organized (`plugins/hcloud/skills/`).
+The template now ships the **full element set** (setup, compute, networking, storage, security, dns, kubernetes, containers, serverless skills + status/deploy/cleanup commands). Fill in only the domains the provider actually offers. To go further still, add more domain skills in the same plugin (`skills/<provider>-databases/SKILL.md`, …) following the same naming and frontmatter conventions — exactly how the bundled `hcloud` plugin is organized (`plugins/hcloud/skills/`).
