@@ -1,0 +1,11 @@
+{
+  "name": "linode",
+  "version": "0.1.0",
+  "description": "Linode / Akamai CLI (linode-cli) skills, status command, and safety hook for Claude Code — authentication and Linode instance lifecycle",
+  "author": {
+    "name": "Aristide Mendo",
+    "url": "https://github.com/mendoo"
+  },
+  "license": "MIT",
+  "keywords": ["linode", "akamai", "linode-cli", "instance", "cloud", "infrastructure", "devops"]
+}

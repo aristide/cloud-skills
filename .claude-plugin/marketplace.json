@@ -50,6 +50,20 @@
       "description": "Contabo CLI (cntb) skills and safety hooks — OAuth2 authentication, VPS/VDS instance lifecycle, and an infrastructure status command",
       "version": "0.1.0",
       "keywords": ["contabo", "cntb", "vps", "vds", "cloud", "infrastructure", "devops"]
+    },
+    {
+      "name": "digitalocean",
+      "source": "digitalocean",
+      "description": "DigitalOcean CLI (doctl) skills and safety hooks — authentication, Droplet lifecycle, and an infrastructure status command",
+      "version": "0.1.0",
+      "keywords": ["digitalocean", "doctl", "droplet", "cloud", "infrastructure", "devops"]
+    },
+    {
+      "name": "linode",
+      "source": "linode",
+      "description": "Linode / Akamai CLI (linode-cli) skills and safety hooks — authentication, Linode instance lifecycle, and an infrastructure status command",
+      "version": "0.1.0",
+      "keywords": ["linode", "akamai", "linode-cli", "instance", "cloud", "infrastructure", "devops"]
     }
   ]
 }

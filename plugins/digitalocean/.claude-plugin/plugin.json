@@ -1,0 +1,11 @@
+{
+  "name": "digitalocean",
+  "version": "0.1.0",
+  "description": "DigitalOcean CLI (doctl) skills, status command, and safety hook for Claude Code — authentication and Droplet lifecycle",
+  "author": {
+    "name": "Aristide Mendo",
+    "url": "https://github.com/mendoo"
+  },
+  "license": "MIT",
+  "keywords": ["digitalocean", "doctl", "droplet", "cloud", "infrastructure", "devops"]
+}

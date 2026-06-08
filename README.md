@@ -17,6 +17,8 @@ A **Claude Code plugin marketplace** that lets you manage your infrastructure ac
 | **gcp** | `gcloud` | Auth/projects, Compute Engine lifecycle, status command |
 | **scaleway** | `scw` | Auth/profiles, Instance lifecycle, status command |
 | **contabo** | `cntb` | OAuth2 auth, VPS/VDS instance lifecycle, status command |
+| **digitalocean** | `doctl` | Auth/contexts, Droplet lifecycle, status command |
+| **linode** | `linode-cli` | Auth/profiles, Linode instance lifecycle, status command |
 
 Each provider plugin contributes auto-activating **skills** (the model loads them when your request matches), a **`/<provider>-status`** slash command, and an advisory **safety hook** that warns before destructive operations on that provider's CLI.
 
@@ -42,7 +44,9 @@ Each provider plugin contributes auto-activating **skills** (the model loads the
 /plugin install azure@cloud-skills
 /plugin install gcp@cloud-skills
 /plugin install scaleway@cloud-skills
-/plugin install contabo@cloud-skills     # …or all of them
+/plugin install contabo@cloud-skills
+/plugin install digitalocean@cloud-skills
+/plugin install linode@cloud-skills      # …or all of them
 ```
 
 There is no single "install all" command — install each provider you want. While developing locally you can point the marketplace at a path: `/plugin marketplace add ./cloud-skills`.
@@ -57,6 +61,8 @@ There is no single "install all" command — install each provider you want. Whi
 **GCP:** "Create an e2-micro Debian instance in europe-west1-b" · `/gcp-status`
 **Scaleway:** "Create a DEV1-S instance in fr-par-1" · `/scaleway-status`
 **Contabo:** "List my VPS instances and show which are stopped" · `/contabo-status`
+**DigitalOcean:** "Create an Ubuntu s-1vcpu-1gb Droplet in fra1 with my SSH key" · `/digitalocean-status`
+**Linode:** "Create a g6-nanode-1 Debian 12 instance in eu-central" · `/linode-status`
 
 Because each safety hook only reacts to its own CLI, you can have several providers installed at once without warnings cross-firing.
 
