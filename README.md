@@ -21,8 +21,8 @@ Each plugin carries a **setup** and **compute** skill, **status / deploy / clean
 | **contabo** | `cntb` | VPS/VDS, private networks + firewall, object storage, secrets — *no DNS/K8s/containers/serverless* |
 | **digitalocean** | `doctl` | Droplets, VPC/firewall/LB, volumes/Spaces, certs, DNS, DOKS, App Platform, Functions |
 | **linode** | `linode-cli` | Linodes, VPC/firewall/NodeBalancer, volumes/object storage, DNS, LKE — *no containers/serverless* |
-| **vultr** | `vultr-cli` | Instances, VPC/firewall/LB, block/object storage, DNS, VKE, Container Registry — *no serverless* |
-| **ovh** | `openstack` | OVH Public Cloud: instances, networking, block/object storage, keypairs, container registry — *DNS & Managed K8s via OVH API/Terraform; no serverless* |
+| **vultr** | `vultr-cli` | Instances, VPC/firewall/LB, block/object storage, DNS, VKE Kubernetes — *no containers or serverless* |
+| **ovh** | `openstack` | OVH Public Cloud: instances, networking, block/object storage, keypairs — *DNS & Managed K8s via OVH API/Terraform; no containers or serverless* |
 | **oracle** | `oci` | Compute, VCN, block/object storage, IAM/certs, DNS, OKE, Container Instances, Functions |
 
 Each provider plugin contributes auto-activating **skills** (the model loads them when your request matches), a **`/<provider>-status`** slash command, and an advisory **safety hook** that warns before destructive operations on that provider's CLI.

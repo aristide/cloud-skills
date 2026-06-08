@@ -107,4 +107,4 @@ Upgrades are rolling; control plane upgrades first, then node pools.
 
 ## Beyond the basics
 
-Run `vultr-cli kubernetes --help` and `vultr-cli kubernetes node-pool --help` for the full flag reference. After fetching kubeconfig, use `kubectl`, `helm`, and standard Kubernetes tooling. For a private container image registry alongside your cluster, see the `vultr-containers` skill.
+Run `vultr-cli kubernetes --help` and `vultr-cli kubernetes node-pool --help` for the full flag reference. After fetching kubeconfig, use `kubectl`, `helm`, and standard Kubernetes tooling. For a private image registry alongside your cluster, Vultr offers a Container Registry — manage it with `vultr-cli container-registry` (run `vultr-cli container-registry --help`).
