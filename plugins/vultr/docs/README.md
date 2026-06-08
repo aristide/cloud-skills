@@ -1,28 +1,16 @@
-# Vultr — Reference & Documentation
+# Documentation
 
-Curated links to the official Vultr documentation for the `vultr-cli` CLI (v3). The skills in this plugin cover the common commands and workflows; use these for deep lookups, full flag references, and concepts the skills don't go into.
+Welcome to the documentation for **Vultr (`vultr-cli`)**. This documentation is organized following the [Diátaxis](https://diataxis.fr/) framework:
 
-## CLI
+- **[Tutorials](https://github.com/vultr/vultr-cli#readme)** — install `vultr-cli`, authenticate, and run your first commands against your Vultr account.
+- **[Guides](https://docs.vultr.com/)** — task-focused how-to articles covering compute, storage, networking, databases, and more.
+- **[Reference](https://docs.vultr.com/reference/vultr-cli)** — the full `vultr-cli` command reference. See also: [API](https://www.vultr.com/api/) · [regions](https://www.vultr.com/features/datacenter-regions/) · [pricing](https://www.vultr.com/pricing/)
 
-- CLI reference (all commands): https://docs.vultr.com/reference/vultr-cli
-- Reference index (CLI + Terraform provider): https://docs.vultr.com/reference
-- Install / upgrade (GitHub releases — pin a version): https://github.com/vultr/vultr-cli/releases
-- GitHub repository (README covers install via Homebrew, Go, Arch, Fedora, OpenBSD, Docker): https://github.com/vultr/vultr-cli
-- Authentication & configuration (`VULTR_API_KEY` env var, `~/.vultr-cli.yaml` config file): https://github.com/vultr/vultr-cli#authentication
+## Getting help
 
-## API
-
-- REST API v2 reference: https://www.vultr.com/api/
-- API key management (one key per account, scoping, expiration, rate limits): https://docs.vultr.com/support/platform/api
-- API access control list — IP allowlist (required before API calls will succeed): https://docs.vultr.com/platform/other/api/manage-api-access-control
-
-## Platform
-
-- Console / customer portal: https://my.vultr.com
-- Regions & datacenter locations: https://www.vultr.com/features/datacenter-regions/
-- Pricing: https://www.vultr.com/pricing/
-- Service health / status: https://status.vultr.com/
-- API & open-source changelog: https://docs.vultr.com/platform/api-opensource-changelog
+- 🖥️ [Customer portal](https://console.vultr.com/)
+- 📡 [Service status](https://status.vultr.com/)
+- 🐛 [Issues / support](https://github.com/vultr/vultr-cli/issues)
 
 ## Concepts & gotchas
 

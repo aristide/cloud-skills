@@ -1,31 +1,16 @@
-# Google Cloud — Reference & Documentation
+# Documentation
 
-Curated links to the official Google Cloud documentation for the `gcloud` CLI. The skills in this plugin cover the common commands and workflows; use these for deep lookups, full flag references, and concepts the skills don't go into.
+Welcome to the documentation for **Google Cloud (`gcloud` CLI)**. This plugin's skills cover everyday commands; the links below point to the official Google Cloud docs, organized following the [Diátaxis](https://diataxis.fr/) framework:
 
-## CLI
+- **[Tutorials](https://cloud.google.com/sdk/docs/quickstart)** — step-by-step introductions to get started
+- **[Guides](https://cloud.google.com/sdk/docs)** — task-oriented how-to articles
+- **[Reference](https://cloud.google.com/sdk/gcloud/reference)** — the full `gcloud` command reference. See also: [API](https://cloud.google.com/apis/docs/overview) · [regions](https://cloud.google.com/about/locations) · [pricing](https://cloud.google.com/pricing)
 
-- [CLI reference (all commands)](https://cloud.google.com/sdk/gcloud/reference) — full `gcloud` command tree with every group, command, and flag
-- [Install / upgrade the Google Cloud CLI](https://cloud.google.com/sdk/docs/install) — platform-specific quickstart (Linux, macOS, Windows, Docker)
-- [Authenticate for the gcloud CLI](https://cloud.google.com/sdk/docs/authorizing) — `gcloud auth login`, service accounts, federated identities, and access tokens
-- [Application Default Credentials (ADC)](https://cloud.google.com/docs/authentication/application-default-credentials) — how SDKs, Terraform, and local apps find credentials automatically
-- [Managing named configurations](https://cloud.google.com/sdk/docs/configurations) — bundle account + project + region/zone into named profiles for multiple environments
-- [gcloud topic filters](https://cloud.google.com/sdk/gcloud/reference/topic/filters) — full filter expression syntax used by `--filter`
-- [gcloud topic formats](https://cloud.google.com/sdk/gcloud/reference/topic/formats) — all `--format` values: `json`, `yaml`, `csv`, `table(...)`, `value(...)`, and format attributes
+## Getting help
 
-## API
-
-- [Google Cloud APIs overview](https://cloud.google.com/apis/docs/overview) — REST API reference index; jump-off point for per-service API docs
-- [Service account credentials](https://cloud.google.com/iam/docs/service-account-creds) — short-lived tokens, service account keys, and how services authenticate to Google APIs
-- [Enable and disable services](https://cloud.google.com/service-usage/docs/enable-disable) — `gcloud services enable` counterpart in the console and REST API
-
-## Platform
-
-- [Console](https://console.cloud.google.com) — Google Cloud web console
-- [Global locations — regions & zones](https://cloud.google.com/about/locations) — interactive map of all 43+ regions and 130+ zones, plus the region picker tool
-- [Pricing overview](https://cloud.google.com/pricing) — per-product pricing pages
-- [Pricing calculator](https://cloud.google.com/products/calculator) — estimate monthly costs for any combination of services
-- [Google Cloud Service Health](https://status.cloud.google.com) — real-time and historical status for all GCP services across regions
-- [View and manage quotas](https://cloud.google.com/docs/quota/view-manage) — see current quota values and request increases via console, gcloud, or the Cloud Quotas API
+- 🖥️ [Console / control panel](https://console.cloud.google.com)
+- 📡 [Service status](https://status.cloud.google.com)
+- 🐛 [Issues / support](https://cloud.google.com/support)
 
 ## Concepts & gotchas
 

@@ -1,29 +1,16 @@
-# Contabo — Reference & Documentation
+# Documentation
 
-Curated links to the official Contabo documentation for the `cntb` CLI. The skills in this plugin cover the common commands and workflows; use these for deep lookups, full flag references, and concepts the skills don't cover.
+Welcome to the documentation for **Contabo (`cntb` CLI)**. This documentation is written and organized following the [Diátaxis](https://diataxis.fr/) framework:
 
-## CLI
+- **[Tutorials](https://github.com/contabo/cntb#getting-started)** — step-by-step walkthrough to install `cntb`, configure credentials, and run your first commands against the Contabo API.
+- **[Guides](https://help.contabo.com)** — task-oriented how-to articles covering the control panel, API access, billing, and product-specific workflows.
+- **[Reference](https://github.com/contabo/cntb)** — the full `cntb` reference. See also: [API](https://api.contabo.com/) · [regions](https://contabo.com/en/locations/) · [pricing](https://contabo.com/en/pricing/)
 
-- CLI reference & README (all commands): <https://github.com/contabo/cntb>
-- Install / upgrade (releases): <https://github.com/contabo/cntb/releases>
-- Authentication & configuration (README — "Getting Started"): <https://github.com/contabo/cntb#getting-started>
-- Output formatting / filtering (README — "Examples"): <https://github.com/contabo/cntb#examples>
+## Getting help
 
-## API
-
-- REST API reference (interactive OpenAPI docs): <https://api.contabo.com/>
-- API authentication — obtain OAuth2 credentials (control panel): <https://my.contabo.com/api/details>
-- API access guide (help article): <https://help.contabo.com/en/support/solutions/articles/103000270527-how-can-i-access-the-contabo-api->
-- API documentation index (help section): <https://help.contabo.com/en/support/solutions/103000250584>
-
-## Platform
-
-- Console / control panel: <https://my.contabo.com>
-- Regions & data center locations: <https://contabo.com/en/locations/>
-- Pricing: <https://contabo.com/en/pricing/>
-- Service health / status: <https://contabo-status.com>
-- Object storage limits (quotas): <https://help.contabo.com/en/support/solutions/articles/103000275478-what-limits-are-there-on-object-storage->
-- Help center: <https://help.contabo.com>
+- 🖥️ [Control panel](https://my.contabo.com)
+- 📡 [Service status](https://contabo-status.com)
+- 🐛 [Issues / support](https://github.com/contabo/cntb/issues)
 
 ## Concepts & gotchas
 

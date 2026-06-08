@@ -1,35 +1,16 @@
-# Azure — Reference & Documentation
+# Documentation
 
-Curated links to the official Azure documentation for the `az` CLI. The skills in this plugin cover the common commands and workflows; use these for deep lookups, full flag references, and concepts the skills don't go into.
+Welcome to the documentation for **Azure (`az` CLI)**. This plugin's skills cover everyday commands; the links below point to the official Microsoft docs, organized following the [Diátaxis](https://diataxis.fr/) framework:
 
-## CLI
+- **[Tutorials](https://learn.microsoft.com/en-us/cli/azure/get-started-with-azure-cli?view=azure-cli-latest)** — step-by-step introductions to get started
+- **[Guides](https://learn.microsoft.com/en-us/cli/azure/?view=azure-cli-latest)** — task-oriented how-to articles
+- **[Reference](https://learn.microsoft.com/en-us/cli/azure/reference-index?view=azure-cli-latest)** — the full `az` command reference. See also: [API](https://learn.microsoft.com/en-us/rest/api/azure/) · [regions](https://azure.microsoft.com/en-us/explore/global-infrastructure/geographies/) · [pricing](https://azure.microsoft.com/en-us/pricing/)
 
-- [CLI reference (all commands)](https://learn.microsoft.com/en-us/cli/azure/reference-index?view=azure-cli-latest)
-- [Azure CLI documentation hub](https://learn.microsoft.com/en-us/cli/azure/?view=azure-cli-latest)
-- [Install / upgrade](https://learn.microsoft.com/en-us/cli/azure/install-azure-cli?view=azure-cli-latest)
-- [Authentication & configuration overview (`az login`)](https://learn.microsoft.com/en-us/cli/azure/authenticate-azure-cli?view=azure-cli-latest)
-- [Sign in interactively](https://learn.microsoft.com/en-us/cli/azure/authenticate-azure-cli-interactively?view=azure-cli-latest)
-- [Sign in with a service principal](https://learn.microsoft.com/en-us/cli/azure/authenticate-azure-cli-service-principal?view=azure-cli-latest)
-- [Output formats (`--output` / `-o`)](https://learn.microsoft.com/en-us/cli/azure/format-output-azure-cli?view=azure-cli-latest)
-- [Query command output (`--query` / JMESPath)](https://learn.microsoft.com/en-us/cli/azure/use-azure-cli-successfully-query?view=azure-cli-latest)
-- [Extensions overview (`az extension`)](https://learn.microsoft.com/en-us/cli/azure/azure-cli-extensions-overview?view=azure-cli-latest)
+## Getting help
 
-## API
-
-- [Azure REST API reference](https://learn.microsoft.com/en-us/rest/api/azure/)
-- [Azure REST API — getting started & authentication](https://learn.microsoft.com/en-us/rest/api/gettingstarted/)
-- [Use the Azure REST API with Azure CLI (`az rest`)](https://learn.microsoft.com/en-us/cli/azure/use-azure-cli-rest-command?view=azure-cli-latest)
-
-## Platform
-
-- [Azure portal](https://portal.azure.com)
-- [Azure global infrastructure — geographies & regions](https://azure.microsoft.com/en-us/explore/global-infrastructure/geographies/)
-- [Products available by region](https://azure.microsoft.com/en-us/explore/global-infrastructure/products-by-region/)
-- [Pricing overview](https://azure.microsoft.com/en-us/pricing/)
-- [Pricing calculator](https://azure.microsoft.com/en-us/pricing/calculator/)
-- [Azure status (global service health)](https://azure.status.microsoft/en-us/status)
-- [Azure subscription and service limits, quotas, and constraints](https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/azure-subscription-service-limits)
-- [Azure Quotas overview](https://learn.microsoft.com/en-us/azure/quotas/quotas-overview)
+- 🖥️ [Console / control panel](https://portal.azure.com)
+- 📡 [Service status](https://azure.status.microsoft/en-us/status)
+- 🐛 [Issues / support](https://github.com/Azure/azure-cli/issues)
 
 ## Concepts & gotchas
 

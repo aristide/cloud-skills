@@ -1,28 +1,16 @@
-# Oracle Cloud Infrastructure — Reference & Documentation
+# Documentation
 
-Curated links to the official Oracle Cloud Infrastructure documentation for the `oci` CLI. The skills in this plugin cover the common commands and workflows; use these for deep lookups, full flag references, and concepts the skills don't go into.
+Welcome to the documentation for **Oracle Cloud Infrastructure (`oci` CLI)**. This documentation is written and organized following the [Diátaxis](https://diataxis.fr/) framework:
 
-## CLI
+- **[Tutorials](https://docs.oracle.com/iaas/Content/API/SDKDocs/cliinstall.htm)** — install and configure the `oci` CLI from scratch (Quickstart: install, authenticate, run your first command).
+- **[Guides](https://docs.oracle.com/iaas/)** — task-oriented how-to guides across all OCI services (compute, networking, storage, IAM, and more).
+- **[Reference](https://docs.oracle.com/iaas/tools/oci-cli/latest/oci_cli_docs/)** — the full `oci` command reference. See also: [API](https://docs.oracle.com/iaas/api/) · [regions](https://docs.oracle.com/iaas/Content/General/Concepts/regions.htm) · [pricing](https://www.oracle.com/cloud/price-list/)
 
-- CLI reference (all commands): <https://docs.oracle.com/iaas/tools/oci-cli/latest/oci_cli_docs/>
-- Install / upgrade: <https://docs.oracle.com/iaas/Content/API/SDKDocs/cliinstall.htm>
-- Authentication & configuration (`oci setup config`, API keys, session tokens, instance principals): <https://docs.oracle.com/iaas/Content/API/SDKDocs/cliconfigure.htm>
-- Session/token auth (`oci session authenticate`): <https://docs.oracle.com/iaas/Content/API/SDKDocs/clitoken.htm>
-- Output formatting / filtering (`--output table`, `--query` JMESPath): <https://docs.oracle.com/iaas/Content/API/SDKDocs/cliusing.htm>
-- GitHub source repository: <https://github.com/oracle/oci-cli>
+## Getting help
 
-## API
-
-- REST API reference (all services, endpoints): <https://docs.oracle.com/iaas/api/>
-- API authentication / required keys and OCIDs: <https://docs.oracle.com/iaas/Content/API/Concepts/apisigningkey.htm>
-
-## Platform
-
-- Console / control panel: <https://cloud.oracle.com>
-- Regions & availability domains: <https://docs.oracle.com/iaas/Content/General/Concepts/regions.htm>
-- Pricing: <https://www.oracle.com/cloud/price-list/>
-- Service health / status: <https://ocistatus.oraclecloud.com/>
-- Quotas & limits (Limits by Service): <https://docs.oracle.com/en-us/iaas/Content/General/service-limits/default.htm>
+- 🖥️ [Console](https://cloud.oracle.com)
+- 📡 [Service status](https://ocistatus.oraclecloud.com/)
+- 🐛 [Issues / support](https://github.com/oracle/oci-cli/issues)
 
 ## Concepts & gotchas
 

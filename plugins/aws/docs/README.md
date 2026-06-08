@@ -1,30 +1,16 @@
-# AWS — Reference & Documentation
+# Documentation
 
-Curated links to the official AWS documentation for the `aws` CLI (AWS CLI v2). The skills in this plugin cover the common commands and workflows; use these for deep lookups, full flag references, and concepts the skills don't go into.
+Welcome to the documentation for **AWS (`aws` CLI)**. This plugin's skills cover everyday commands; the links below point to the official AWS docs, organized following the [Diátaxis](https://diataxis.fr/) framework:
 
-## CLI
+- **[Tutorials](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-getting-started.html)** — step-by-step introductions to get started
+- **[Guides](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-using.html)** — task-oriented how-to articles
+- **[Reference](https://docs.aws.amazon.com/cli/latest/reference/)** — the full `aws` command reference. See also: [API](https://docs.aws.amazon.com/general/latest/gr/aws-service-information.html) · [regions](https://aws.amazon.com/about-aws/global-infrastructure/regions_az/) · [pricing](https://aws.amazon.com/pricing/)
 
-- [CLI reference (all commands)](https://docs.aws.amazon.com/cli/latest/reference/) — per-service, per-command flag listings for the full AWS CLI v2 surface
-- [Install / upgrade AWS CLI v2](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html) — Linux, macOS, and Windows install instructions
-- [Authentication & configuration](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-authentication.html) — credential types, precedence order, and recommended auth paths
-- [Configuration & credential file settings](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-files.html) — `~/.aws/config` and `~/.aws/credentials` format, profiles, and all supported keys
-- [Output formatting (`--output`)](https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-output-format.html) — json, yaml, yaml-stream, text, table, off
-- [Filtering output (`--query` / JMESPath)](https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-filter.html) — server-side filters and client-side `--query` JMESPath expressions
-- [Pagination (`--no-paginate`, `--page-size`, `--max-items`)](https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-pagination.html) — controlling multi-page responses
-- [IAM Identity Center (SSO) configuration](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-sso.html) — `aws configure sso` and short-lived credential refresh
+## Getting help
 
-## API
-
-- [AWS service API reference index](https://docs.aws.amazon.com/general/latest/gr/aws-service-information.html) — endpoints and quotas for every AWS service; jump-off point to each service's REST API reference
-- [AWS documentation home](https://docs.aws.amazon.com/) — top-level index for all service developer guides and API references
-
-## Platform
-
-- [AWS Management Console](https://aws.amazon.com/console/) — browser-based portal for all AWS services
-- [Regions & Availability Zones](https://aws.amazon.com/about-aws/global-infrastructure/regions_az/) — current region list, AZ counts, and local/outpost availability
-- [AWS Pricing](https://aws.amazon.com/pricing/) — per-service pricing pages and pricing calculator
-- [AWS Health Dashboard (service health)](https://health.aws.amazon.com/health/status) — real-time and historical status for all AWS services across all regions
-- [Service Quotas](https://docs.aws.amazon.com/servicequotas/latest/userguide/intro.html) — view default limits and request increases for any AWS service quota
+- 🖥️ [Console / control panel](https://aws.amazon.com/console/)
+- 📡 [Service status](https://health.aws.amazon.com/health/status)
+- 🐛 [Issues / support](https://console.aws.amazon.com/support/home)
 
 ## Concepts & gotchas
 

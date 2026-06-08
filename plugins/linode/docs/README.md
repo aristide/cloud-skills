@@ -1,31 +1,18 @@
-# Linode — Reference & Documentation
+# Documentation
 
-Curated links to the official Linode (Akamai Connected Cloud) documentation for the `linode-cli` CLI. The skills in this plugin cover the common commands and workflows; use these for deep lookups, full flag references, and concepts the skills don't go into.
+Welcome to the documentation for **Linode (`linode-cli`)**.
 
-## CLI
+This documentation is written and organized following the [Diátaxis](https://diataxis.fr/) framework:
 
-- CLI reference (all commands): <https://techdocs.akamai.com/cloud-computing/docs/cli-1>
-- Install / upgrade (getting started): <https://techdocs.akamai.com/cloud-computing/docs/getting-started-with-the-linode-cli>
-- Authentication & configuration: <https://techdocs.akamai.com/cloud-computing/docs/getting-started-with-the-linode-cli>
-- Output formatting / filtering: <https://techdocs.akamai.com/cloud-computing/docs/getting-started-with-the-linode-cli>
-- Official GitHub repository (source, issues, releases): <https://github.com/linode/linode-cli>
-- CLI command reference via API docs: <https://techdocs.akamai.com/linode-api/reference/cli>
+- **[Tutorials](https://techdocs.akamai.com/cloud-computing/docs/getting-started-with-the-linode-cli)** — step-by-step lessons that walk you through installing, configuring, and running your first commands with `linode-cli`.
+- **[Guides](https://techdocs.akamai.com/cloud-computing/docs)** — task-oriented how-to articles covering individual Akamai Cloud Computing services and workflows.
+- **[Reference](https://techdocs.akamai.com/cloud-computing/docs/cli-1)** — the full `linode-cli` command reference. See also: [API](https://techdocs.akamai.com/linode-api/reference/api) · [regions](https://techdocs.akamai.com/cloud-computing/docs/how-to-choose-a-data-center) · [pricing](https://www.akamai.com/cloud/pricing)
 
-## API
+## Getting help
 
-- REST API reference (Linode API v4): <https://techdocs.akamai.com/linode-api/reference/api>
-- API authentication / personal access tokens: <https://techdocs.akamai.com/linode-api/reference/get-started>
-- API rate limits: <https://techdocs.akamai.com/linode-api/reference/rate-limits>
-
-## Platform
-
-- Console / Cloud Manager: <https://cloud.linode.com>
-- Personal Access Token management: <https://cloud.linode.com/profile/tokens>
-- Regions & availability (choose a data center): <https://techdocs.akamai.com/cloud-computing/docs/how-to-choose-a-data-center>
-- Pricing: <https://www.linode.com/pricing/>
-- Service health / status: <https://status.linode.com>
-- Billing model: <https://techdocs.akamai.com/cloud-computing/docs/understanding-how-billing-works>
-- Object Storage quotas & limits: <https://techdocs.akamai.com/cloud-computing/docs/object-storage-product-limits>
+- 🖥️ [Cloud Manager console](https://cloud.linode.com)
+- 📡 [Service status](https://status.linode.com)
+- 🐛 [Issues / support](https://github.com/linode/linode-cli/issues)
 
 ## Concepts & gotchas
 

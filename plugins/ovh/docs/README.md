@@ -1,44 +1,18 @@
-# OVHcloud Public Cloud — Reference & Documentation
+# Documentation
 
-Curated links to the official documentation for OVHcloud Public Cloud. This plugin uses the OpenStack client (`openstack` binary) for compute/network/storage operations, and the OVH API or Terraform `ovh` provider for platform-level resources (DNS, Managed Kubernetes, billing, dedicated servers) that are outside the OpenStack surface. Use these links for deep lookups, full flag references, and concepts the skills don't go into.
+Welcome to the documentation for **OVHcloud Public Cloud (`openstack` client)**.
 
----
+This documentation is written and organized following the [Diátaxis](https://diataxis.fr/) framework:
 
-## OpenStack client (CLI)
+- **[Tutorials](https://docs.ovhcloud.com/en/guides/public-cloud/compute/starting-with-nova)** — getting started with OpenStack on OVH Public Cloud
+- **[Guides](https://docs.ovhcloud.com/en/)** — task-oriented OVH Public Cloud how-tos
+- **[Reference](https://docs.openstack.org/python-openstackclient/latest/cli/command-list.html)** — the OpenStack `openstack` command reference. See also: [OVH API](https://api.eu.ovhcloud.com/console/) · [regions](https://www.ovhcloud.com/en/public-cloud/regions-availability/) · [pricing](https://www.ovhcloud.com/en/public-cloud/prices/) · [Terraform OVH provider](https://registry.terraform.io/providers/ovh/ovh/latest/docs)
 
-- **Command reference (all commands):** https://docs.openstack.org/python-openstackclient/latest/cli/command-list.html
-- **Install / upgrade (`python-openstackclient`):** https://docs.openstack.org/python-openstackclient/latest/
-- **Authentication guide (password, token, application credentials, clouds.yaml):** https://docs.openstack.org/python-openstackclient/latest/cli/authentication.html
-- **Configuration guide (global options, env vars, clouds.yaml, logging):** https://docs.openstack.org/python-openstackclient/latest/configuration/index.html
-- **Manual page (synopsis, global flags, command structure):** https://docs.openstack.org/python-openstackclient/latest/cli/man/openstack.html
+## Getting help
 
-## OVHcloud guides for OpenStack / Public Cloud
-
-- **Preparing the OpenStack API environment (install client, set OS_* vars, RC file):** https://docs.ovhcloud.com/en/guides/public-cloud/cross-functional/compute-prepare-openstack-api-environment
-- **Getting started with the OpenStack Compute API (Nova):** https://docs.ovhcloud.com/en/guides/public-cloud/compute/starting-with-nova
-- **Using service accounts (application credentials) to connect to OpenStack:** https://docs.ovhcloud.com/en/guides/manage-and-operate/iam/authenticate-api-openstack-with-service-account
-- **All you need to know to get started with Public Cloud:** https://help.ovhcloud.com/csm/en-public-cloud-compute-essential-information?id=kb_article_view&sysparm_article=KB0050390
-- **OpenStack tutorials index (RC file, tokens, vRack, Heat, etc.):** https://help.ovhcloud.com/csm/en-documentation-public-cloud-cross-functional-tutorials-openstack?id=kb_browse_cat&kb_id=574a8325551974502d4c6e78b7421938&kb_category=c627fe3c50f1325c476b993c97467c06
-
-## OVH API & platform
-
-- **OVH API console (interactive browser, EU endpoint):** https://api.eu.ovhcloud.com/console/
-- **OVH API developer portal:** https://eu.api.ovh.com/
-- **OVHcloud Control Panel (manager login):** https://www.ovhcloud.com/manager/
-- **Public Cloud regions & product availability:** https://www.ovhcloud.com/en/public-cloud/regions-availability/
-- **Public Cloud pricing:** https://www.ovhcloud.com/en/public-cloud/prices/
-- **Service health & incidents:** https://www.status-ovhcloud.com/
-- **How to increase Public Cloud quotas:** https://docs.ovhcloud.com/en/guides/public-cloud/cross-functional/increasing-public-cloud-quota
-
-## Terraform OVH provider (DNS, Managed Kubernetes, and beyond)
-
-Resources such as DNS zones and Managed Kubernetes clusters are managed through the OVH API or Terraform, not via the `openstack` CLI.
-
-- **Terraform `ovh` provider (latest):** https://registry.terraform.io/providers/ovh/ovh/latest
-- **Provider docs overview (authentication, all resources & data sources):** https://registry.terraform.io/providers/ovh/ovh/latest/docs
-- **Managed Kubernetes (`ovh_cloud_project_kube`) resource:** https://registry.terraform.io/providers/ovh/ovh/latest/docs/resources/cloud_project_kube
-- **OVHcloud Managed Kubernetes Service (MKS) guides:** https://help.ovhcloud.com/csm/en-documentation-public-cloud-containers-orchestration-managed-kubernetes-k8s?id=kb_browse_cat&kb_id=574a8325551974502d4c6e78b7421938&kb_category=f334d555f49801102d4ca4d466a7fdd2
-- **DNS zone guides:** https://docs.ovhcloud.com/en/guides/web-cloud/domains/dns-zone-general-information
+- 🖥️ [Control panel](https://www.ovhcloud.com/manager/)
+- 📡 [Service status](https://www.status-ovhcloud.com/)
+- 🐛 [Issues / support](https://help.ovhcloud.com/csm/en?id=csm_index)
 
 ## Concepts & gotchas
 

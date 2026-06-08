@@ -1,29 +1,16 @@
-# DigitalOcean — Reference & Documentation
+# Documentation
 
-Curated links to the official DigitalOcean documentation for the `doctl` CLI. The skills in this plugin cover the common commands and workflows; use these for deep lookups, full flag references, and concepts the skills don't go into.
+Welcome to the documentation for **DigitalOcean (`doctl` CLI)**. This documentation is organized following the [Diátaxis](https://diataxis.fr/) framework:
 
-## CLI
+- **[Tutorials](https://docs.digitalocean.com/reference/doctl/how-to/install/)** — step-by-step guides to install, authenticate, and take your first actions with `doctl`.
+- **[Guides](https://docs.digitalocean.com/products/)** — task-oriented how-to documentation for every DigitalOcean product and workflow.
+- **[Reference](https://docs.digitalocean.com/reference/doctl/reference/)** — the full `doctl` command reference. See also: [API](https://docs.digitalocean.com/reference/api/reference/) · [regions](https://docs.digitalocean.com/platform/regional-availability/) · [pricing](https://www.digitalocean.com/pricing)
 
-- CLI reference (all commands): <https://docs.digitalocean.com/reference/doctl/reference/>
-- Install / upgrade: <https://docs.digitalocean.com/reference/doctl/how-to/install/>
-- Authentication & configuration (`doctl auth init`, contexts): <https://docs.digitalocean.com/reference/doctl/reference/auth/>
-- Output formatting / column filtering (`--format`, `--output`, `--no-header`): <https://docs.digitalocean.com/reference/doctl/reference/>
-- doctl GitHub repository (releases, source, changelog): <https://github.com/digitalocean/doctl>
+## Getting help
 
-## API
-
-- REST API v2 reference (all endpoints): <https://docs.digitalocean.com/reference/api/reference/>
-- API overview (v2, Spaces, OAuth, Metadata APIs): <https://docs.digitalocean.com/reference/api/>
-- Create a Personal Access Token (PAT) & token scopes: <https://docs.digitalocean.com/reference/api/create-personal-access-token/>
-
-## Platform
-
-- Console / control panel: <https://cloud.digitalocean.com>
-- Regions & datacenter availability: <https://docs.digitalocean.com/platform/regional-availability/>
-- Pricing: <https://www.digitalocean.com/pricing>
-- Service health / status: <https://status.digitalocean.com/>
-- Resource quotas & limits (teams): <https://docs.digitalocean.com/platform/teams/how-to/view-resource-limits/>
-- Spaces object storage overview (S3-compatible): <https://docs.digitalocean.com/products/spaces/>
+- 🖥️ [Console / control panel](https://cloud.digitalocean.com)
+- 📡 [Service status](https://status.digitalocean.com/)
+- 🐛 [Issues / support](https://github.com/digitalocean/doctl/issues)
 
 ## Concepts & gotchas
 

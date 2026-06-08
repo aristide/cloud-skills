@@ -1,30 +1,16 @@
-# Scaleway — Reference & Documentation
+# Documentation
 
-Curated links to the official Scaleway documentation for the `scw` CLI. The skills in this plugin cover the common commands and workflows; use these for deep lookups, full flag references, and concepts the skills don't go into.
+Welcome to the documentation for **Scaleway (`scw` CLI)**. This documentation is written and organized following the [Diátaxis](https://diataxis.fr/) framework:
 
-## CLI
+- **[Tutorials](https://www.scaleway.com/en/docs/scaleway-cli/quickstart/)** — step-by-step lessons that walk you through installing, configuring, and using the `scw` CLI from scratch.
+- **[Guides](https://www.scaleway.com/en/docs/)** — task-oriented how-to guides covering specific Scaleway products and workflows.
+- **[Reference](https://cli.scaleway.com/)** — the full `scw` command reference. See also: [API](https://www.scaleway.com/en/developers/api/) · [regions](https://www.scaleway.com/en/product-availability-by-region/) · [pricing](https://www.scaleway.com/en/pricing/)
 
-- CLI reference (all commands): <https://cli.scaleway.com/>
-- Install / upgrade (GitHub repo + release binaries): <https://github.com/scaleway/scaleway-cli>
-- Latest releases: <https://github.com/scaleway/scaleway-cli/releases>
-- Authentication & configuration (`scw init`, `scw config`): <https://cli.scaleway.com/init/> and <https://cli.scaleway.com/config/>
-- Output formatting / filtering (`-o` flag, Go templates): <https://cli.scaleway.com/help/>
-- Environment variables (`SCW_ACCESS_KEY`, `SCW_SECRET_KEY`, etc.): <https://www.scaleway.com/en/docs/scaleway-cli/reference-content/environment-variables/>
-- Quickstart guide: <https://www.scaleway.com/en/docs/scaleway-cli/quickstart/>
+## Getting help
 
-## API
-
-- REST API reference (all products): <https://www.scaleway.com/en/developers/api/>
-- IAM API keys — create & manage: <https://www.scaleway.com/en/docs/iam/how-to/create-api-keys/>
-- IAM concepts (policies, permission sets, applications): <https://www.scaleway.com/en/docs/iam/concepts/>
-
-## Platform
-
-- Console / control panel: <https://console.scaleway.com>
-- Product availability by region & zone: <https://www.scaleway.com/en/product-availability-by-region/>
-- Pricing (all products): <https://www.scaleway.com/en/pricing/>
-- Service health / status: <https://status.scaleway.com>
-- Organizations & Projects concepts: <https://www.scaleway.com/en/docs/organizations-and-projects/concepts/>
+- 🖥️ [Console / control panel](https://console.scaleway.com)
+- 📡 [Service status](https://status.scaleway.com)
+- 🐛 [Issues / support](https://github.com/scaleway/scaleway-cli/issues)
 
 ## Concepts & gotchas
 
