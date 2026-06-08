@@ -19,6 +19,9 @@ A **Claude Code plugin marketplace** that lets you manage your infrastructure ac
 | **contabo** | `cntb` | OAuth2 auth, VPS/VDS instance lifecycle, status command |
 | **digitalocean** | `doctl` | Auth/contexts, Droplet lifecycle, status command |
 | **linode** | `linode-cli` | Auth/profiles, Linode instance lifecycle, status command |
+| **vultr** | `vultr-cli` | Auth, instance lifecycle, status command |
+| **ovh** | `openstack` | OVH Public Cloud (OpenStack): auth, instance lifecycle, status command |
+| **oracle** | `oci` | Auth/profiles/compartments, Compute instance lifecycle, status command |
 
 Each provider plugin contributes auto-activating **skills** (the model loads them when your request matches), a **`/<provider>-status`** slash command, and an advisory **safety hook** that warns before destructive operations on that provider's CLI.
 
@@ -46,7 +49,10 @@ Each provider plugin contributes auto-activating **skills** (the model loads the
 /plugin install scaleway@cloud-skills
 /plugin install contabo@cloud-skills
 /plugin install digitalocean@cloud-skills
-/plugin install linode@cloud-skills      # …or all of them
+/plugin install linode@cloud-skills
+/plugin install vultr@cloud-skills
+/plugin install ovh@cloud-skills
+/plugin install oracle@cloud-skills      # …or all of them
 ```
 
 There is no single "install all" command — install each provider you want. While developing locally you can point the marketplace at a path: `/plugin marketplace add ./cloud-skills`.
@@ -63,6 +69,9 @@ There is no single "install all" command — install each provider you want. Whi
 **Contabo:** "List my VPS instances and show which are stopped" · `/contabo-status`
 **DigitalOcean:** "Create an Ubuntu s-1vcpu-1gb Droplet in fra1 with my SSH key" · `/digitalocean-status`
 **Linode:** "Create a g6-nanode-1 Debian 12 instance in eu-central" · `/linode-status`
+**Vultr:** "Deploy a vc2-1c-1gb instance in fra" · `/vultr-status`
+**OVH:** "Create a b3-8 Ubuntu instance on Ext-Net in GRA11" · `/ovh-status`
+**Oracle:** "Launch a VM.Standard.A1.Flex instance in my compartment" · `/oracle-status`
 
 Because each safety hook only reacts to its own CLI, you can have several providers installed at once without warnings cross-firing.
 

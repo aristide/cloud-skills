@@ -1,0 +1,11 @@
+{
+  "name": "ovh",
+  "version": "0.1.0",
+  "description": "OVHcloud Public Cloud skills, status command, and safety hook for Claude Code — OpenStack authentication and instance lifecycle (OVH Public Cloud is OpenStack-based)",
+  "author": {
+    "name": "Aristide Mendo",
+    "url": "https://github.com/mendoo"
+  },
+  "license": "MIT",
+  "keywords": ["ovh", "ovhcloud", "openstack", "public-cloud", "instance", "infrastructure", "devops"]
+}

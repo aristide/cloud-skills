@@ -1,0 +1,11 @@
+{
+  "name": "vultr",
+  "version": "0.1.0",
+  "description": "Vultr CLI (vultr-cli) skills, status command, and safety hook for Claude Code — authentication and instance lifecycle",
+  "author": {
+    "name": "Aristide Mendo",
+    "url": "https://github.com/mendoo"
+  },
+  "license": "MIT",
+  "keywords": ["vultr", "vultr-cli", "instance", "cloud", "infrastructure", "devops"]
+}

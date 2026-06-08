@@ -64,6 +64,27 @@
       "description": "Linode / Akamai CLI (linode-cli) skills and safety hooks — authentication, Linode instance lifecycle, and an infrastructure status command",
       "version": "0.1.0",
       "keywords": ["linode", "akamai", "linode-cli", "instance", "cloud", "infrastructure", "devops"]
+    },
+    {
+      "name": "vultr",
+      "source": "vultr",
+      "description": "Vultr CLI (vultr-cli) skills and safety hooks — authentication, instance lifecycle, and an infrastructure status command",
+      "version": "0.1.0",
+      "keywords": ["vultr", "vultr-cli", "instance", "cloud", "infrastructure", "devops"]
+    },
+    {
+      "name": "ovh",
+      "source": "ovh",
+      "description": "OVHcloud Public Cloud skills and safety hooks (OpenStack-based) — openstack auth, instance lifecycle, and an infrastructure status command",
+      "version": "0.1.0",
+      "keywords": ["ovh", "ovhcloud", "openstack", "public-cloud", "instance", "infrastructure", "devops"]
+    },
+    {
+      "name": "oracle",
+      "source": "oracle",
+      "description": "Oracle Cloud Infrastructure CLI (oci) skills and safety hooks — authentication, Compute instance lifecycle, and an infrastructure status command",
+      "version": "0.1.0",
+      "keywords": ["oracle", "oci", "oraclecloud", "compute", "cloud", "infrastructure", "devops"]
     }
   ]
 }

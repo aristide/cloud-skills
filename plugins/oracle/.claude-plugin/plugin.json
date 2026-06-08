@@ -1,0 +1,11 @@
+{
+  "name": "oracle",
+  "version": "0.1.0",
+  "description": "Oracle Cloud Infrastructure CLI (oci) skills, status command, and safety hook for Claude Code — authentication and Compute instance lifecycle",
+  "author": {
+    "name": "Aristide Mendo",
+    "url": "https://github.com/mendoo"
+  },
+  "license": "MIT",
+  "keywords": ["oracle", "oci", "oraclecloud", "compute", "cloud", "infrastructure", "devops"]
+}
