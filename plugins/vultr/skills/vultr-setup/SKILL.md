@@ -23,7 +23,16 @@ go install github.com/vultr/vultr-cli/v3@latest
 
 ### Manual (GitHub Releases)
 
-Download from [github.com/vultr/vultr-cli/releases](https://github.com/vultr/vultr-cli/releases), extract, and move the binary onto your `PATH`.
+Release assets are versioned (e.g. `vultr-cli_v3.10.0_linux_amd64.tar.gz`), so pin a version — check [the releases page](https://github.com/vultr/vultr-cli/releases) for the current one:
+
+```bash
+VER=v3.10.0
+curl -sSLO "https://github.com/vultr/vultr-cli/releases/download/${VER}/vultr-cli_${VER}_linux_amd64.tar.gz"
+tar -xzf "vultr-cli_${VER}_linux_amd64.tar.gz" vultr-cli
+sudo mv vultr-cli /usr/local/bin/
+```
+
+(macOS assets use `macOs` in the name, e.g. `vultr-cli_v3.10.0_macOs_arm64.tar.gz`.)
 
 ## Authentication
 

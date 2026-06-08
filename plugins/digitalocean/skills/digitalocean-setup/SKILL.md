@@ -23,8 +23,11 @@ sudo snap install doctl
 
 ### Manual (GitHub Releases)
 
+Release assets are versioned (e.g. `doctl-1.160.1-linux-amd64.tar.gz`), so pin a version — check [the releases page](https://github.com/digitalocean/doctl/releases) for the current one:
+
 ```bash
-curl -sL https://github.com/digitalocean/doctl/releases/latest/download/doctl-1-linux-amd64.tar.gz | tar -xz
+VER=1.160.1
+curl -sL "https://github.com/digitalocean/doctl/releases/download/v${VER}/doctl-${VER}-linux-amd64.tar.gz" | tar -xz
 sudo mv doctl /usr/local/bin/
 ```
 
