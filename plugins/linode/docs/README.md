@@ -6,11 +6,11 @@ This documentation is written and organized following the [Diátaxis](https://di
 
 - **[Tutorials](https://techdocs.akamai.com/cloud-computing/docs/getting-started-with-the-linode-cli)** — step-by-step lessons that walk you through installing, configuring, and running your first commands with `linode-cli`.
 - **[Guides](https://techdocs.akamai.com/cloud-computing/docs)** — task-oriented how-to articles covering individual Akamai Cloud Computing services and workflows.
-- **[Reference](https://techdocs.akamai.com/cloud-computing/docs/cli-1)** — the full `linode-cli` command reference. See also: [API](https://techdocs.akamai.com/linode-api/reference/api) · [regions](https://techdocs.akamai.com/cloud-computing/docs/how-to-choose-a-data-center) · [pricing](https://www.akamai.com/cloud/pricing)
+- **[Reference](https://techdocs.akamai.com/cloud-computing/docs/cli-1)** — `linode-cli` overview and per-resource command reference. See also: [API](https://techdocs.akamai.com/linode-api/reference/api) · [regions](https://techdocs.akamai.com/cloud-computing/docs/how-to-choose-a-data-center) · [pricing](https://www.akamai.com/cloud/pricing)
 
 ## Getting help
 
-- 🖥️ [Cloud Manager console](https://cloud.linode.com)
+- 🖥️ [Akamai Cloud Manager](https://cloud.linode.com)
 - 📡 [Service status](https://status.linode.com)
 - 🐛 [Issues / support](https://github.com/linode/linode-cli/issues)
 

@@ -20,7 +20,7 @@ Welcome to the documentation for **Google Cloud (`gcloud` CLI)**. This plugin's 
 
 - **Two separate credential sets.** `gcloud auth login` sets credentials for `gcloud` commands; `gcloud auth application-default login` sets Application Default Credentials used by client libraries, Terraform, and any code that calls ADC. Both are often needed.
 
-- **`gcloud storage` replaces `gsutil`.** `gsutil` is no longer recommended for Cloud Storage; `gcloud storage` is faster (up to 94 % faster on large downloads) and is the current standard. See the official [transition guide](https://cloud.google.com/storage/docs/gsutil-transition-to-gcloud).
+- **`gcloud storage` replaces `gsutil`.** `gsutil` is a legacy tool that is minimally maintained and not the recommended CLI for Cloud Storage; `gcloud storage` is the current standard and achieves faster transfer rates with less manual optimization. See the official [transition guide](https://cloud.google.com/storage/docs/gsutil-transition-to-gcloud).
 
 - **Zones vs. regions.** A region (e.g. `europe-west1`) is a geographic area; a zone (e.g. `europe-west1-b`) is an isolated data-centre location within a region. Most Compute Engine resources are zonal; many managed services are regional. Set defaults with `gcloud config set compute/region` and `gcloud config set compute/zone`.
 

@@ -22,7 +22,7 @@ Welcome to the documentation for **DigitalOcean (`doctl` CLI)**. This documentat
 
 - **No global default region** — Unlike some cloud CLIs, `doctl` has no persistent default region setting. Pass `--region <slug>` on each resource-creation command. Use `doctl compute region list` to list available slugs (e.g. `nyc3`, `sfo3`, `ams3`, `sgp1`, `fra1`).
 
-- **Spaces = S3-compatible object storage** — The Spaces API is interoperable with the AWS S3 API, so any S3-compatible tool or SDK works against a Spaces endpoint (`<bucket>.{region}.digitaloceanspaces.com`). Spaces uses separate access keys (not PATs); generate them at <https://cloud.digitalocean.com/spaces>.
+- **Spaces = S3-compatible object storage** — The Spaces API is interoperable with the AWS S3 API, so any S3-compatible tool or SDK works against a Spaces endpoint (`<bucket>.<region>.digitaloceanspaces.com`). Spaces uses separate access keys (not PATs); generate them at <https://cloud.digitalocean.com/spaces>.
 
 - **API rate limits** — The DigitalOcean API enforces 5 000 requests per hour and 250 requests per minute per token. Check current usage with `doctl account ratelimit`.
 

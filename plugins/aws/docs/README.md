@@ -26,4 +26,4 @@ Welcome to the documentation for **AWS (`aws` CLI)**. This plugin's skills cover
 
 - **`--dry-run` (EC2 only)** — validates IAM permissions for an EC2 action without executing it. Returns `DryRunOperation` on success, `UnauthorizedOperation` on failure. Not available outside EC2.
 
-- **ARN format** — `arn:partition:service:region:account-id:resource`. The partition is `aws` for standard, `aws-cn` for China, `aws-us-gov` for GovCloud. Region and account-id fields are empty for global services (IAM, S3 bucket names, CloudFront).
+- **ARN format** — `arn:partition:service:region:account-id:resource`. The partition is `aws` for standard, `aws-cn` for China, `aws-us-gov` for GovCloud. The region field is empty for global services (IAM, S3 bucket names, CloudFront); the account-id field is also empty for S3 bucket ARNs but is retained for IAM (e.g., `arn:aws:iam::123456789012:user/alice`).

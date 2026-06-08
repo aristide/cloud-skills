@@ -18,7 +18,7 @@ Welcome to the documentation for **Scaleway (`scw` CLI)**. This documentation is
 
 - **`zone=` and `region=` are positional args, not flags.** Most `scw` commands that are scoped to a location accept `zone=fr-par-1` or `region=fr-par` as plain `key=value` positional arguments rather than `--zone` flags. Example: `scw instance server list zone=nl-ams-1`.
 
-- **All non-flag arguments are `key=value`.** The Scaleway CLI uses a consistent `key=value` syntax for resource fields (e.g., `scw instance server create image=ubuntu_focal type=DEV1-S zone=fr-par-1`), not positional order-dependent arguments.
+- **All non-flag arguments are `key=value`.** The Scaleway CLI uses a consistent `key=value` syntax for resource fields (e.g., `scw instance server create image=ubuntu_jammy type=DEV1-S zone=fr-par-1`), not positional order-dependent arguments.
 
 - **Regions and zones.** Scaleway has four regions, each with up to three availability zones:
   - `fr-par` — Paris, France (zones: `fr-par-1`, `fr-par-2`, `fr-par-3`)

@@ -12,13 +12,13 @@ This documentation is written and organized following the [Diátaxis](https://di
 
 - 🖥️ [Control panel](https://www.ovhcloud.com/manager/)
 - 📡 [Service status](https://www.status-ovhcloud.com/)
-- 🐛 [Issues / support](https://help.ovhcloud.com/csm/en?id=csm_index)
+- 🐛 [Issues / support](https://www.ovhcloud.com/en/support/)
 
 ## Concepts & gotchas
 
 - **OS_* RC file / application credentials:** Authentication to the OpenStack API is done by sourcing an `openrc.sh` file downloaded from the OVH Control Panel (Public Cloud → Users & Roles → Download RC file). For non-interactive/automation use, prefer application credentials (`openstack application credential create`) over raw passwords — they are scoped and revocable without changing the user's password. Credentials can also be stored in `~/.config/openstack/clouds.yaml` and selected with `--os-cloud <name>`.
 
-- **Region codes:** OVH Public Cloud uses codes such as `GRA11` (Gravelines), `SBG5` (Strasbourg), `BHS5` (Beauharnois, Canada), `WAW1` (Warsaw), `DE1` (Frankfurt), `UK1` (London), `SGP1` (Singapore). Set the active region with `OS_REGION_NAME` or `--os-region-name`. List available regions for your project: `openstack region list`.
+- **Region codes:** OVH Public Cloud uses codes such as `GRA11` (Gravelines), `SBG5` (Strasbourg), `BHS5` (Beauharnois, Canada), `WAW` (Warsaw), `LIM` (Limburg/Frankfurt), `ERI` (Erith/London), `SGP` (Singapore). Set the active region with `OS_REGION_NAME` or `--os-region-name`. List available regions for your project: `openstack region list`.
 
 - **SHUTOFF instances still bill:** Stopping an instance (SHUTOFF state) via `openstack server stop` does **not** stop billing. OVHcloud bills by the hour for compute resources whether the instance is running or stopped. To stop billing entirely you must delete the instance (and separately snapshot it first if you want to restore it later). Only "flex" instances based on local storage are exempt.
 

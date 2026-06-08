@@ -22,7 +22,7 @@ Welcome to the documentation for **Azure (`az` CLI)**. This plugin's skills cove
 
 - **`az` extensions** — Many newer or preview services live in optional extensions (`az extension add --name <name>`) rather than the core CLI binary. Extensions must be updated separately with `az extension update --name <name>`. Run `az extension list-available --output table` to browse what is available.
 
-- **`--output` and `--query` defaults** — The default output format is `json`. Set a persistent default with `az configure --defaults output=table`. Use `--query` with a [JMESPath](https://jmespath.org) expression for server-side filtering — this reduces payload size and is faster than piping to `jq`.
+- **`--output` and `--query` defaults** — The default output format is `json`. Set a persistent default with `az configure --defaults output=table`. Use `--query` with a [JMESPath](https://jmespath.org) expression to filter and reshape the CLI output — filtering is applied **client-side** on the returned JSON before display, so it does not reduce network payload but produces cleaner output than piping to `jq`.
 
 - **`az configure` defaults** — Avoid repeating `--resource-group` and `--location` by setting `az configure --defaults group=<rg> location=<region>`. These defaults are stored in `~/.azure/config` and apply to the local profile only.
 

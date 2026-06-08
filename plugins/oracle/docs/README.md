@@ -14,7 +14,7 @@ Welcome to the documentation for **Oracle Cloud Infrastructure (`oci` CLI)**. Th
 
 ## Concepts & gotchas
 
-- **OCIDs everywhere.** Every OCI resource has an Oracle Cloud ID (OCID) of the form `ocid1.<resource-type>.<realm>.[region].<unique-id>`. You need the correct OCID to target any resource. Reference: <https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm>
+- **OCIDs everywhere.** Every OCI resource has an Oracle Cloud ID (OCID) of the form `ocid1.<resource-type>.<realm>.[region][.future-use].<unique-id>`. You need the correct OCID to target any resource. Reference: <https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm>
 
 - **`--compartment-id` is required by almost every resource command.** OCI organises all resources inside compartments (including the root tenancy compartment). If you omit `--compartment-id` the CLI will error or return no results. Export it to an env var (`export C=ocid1.compartment...`) to avoid repeating it on every call.
 
@@ -22,7 +22,7 @@ Welcome to the documentation for **Oracle Cloud Infrastructure (`oci` CLI)**. Th
 
 - **JSON output + `--query` (JMESPath).** The default output is JSON. Use `--output table` for human-readable results, and `--query` to project or filter fields inline — e.g. `--query 'data[].{name:"display-name",state:"lifecycle-state"}'`. Pipe to `jq` for more complex transformations.
 
-- **Terminating an instance keeps the boot volume by default (Console).** When you terminate an instance through the Console the boot volume is preserved unless you explicitly check "Permanently delete the attached boot volume". Via the CLI, pass `--preserve-boot-volume true` to keep the boot volume, or `--preserve-boot-volume false` to delete it. Reference: <https://docs.oracle.com/iaas/Content/Compute/Tasks/terminatinginstance.htm>
+- **Boot volume default differs between Console and CLI.** When you terminate an instance through the Console the boot volume is **preserved** unless you explicitly check "Permanently delete the attached boot volume". Via the CLI the default is the opposite: `--preserve-boot-volume` defaults to `false`, meaning the boot volume is **deleted** unless you pass `--preserve-boot-volume true`. Reference: <https://docs.oracle.com/iaas/Content/Compute/Tasks/terminatinginstance.htm>
 
 - **Auth methods.** Three common methods: (1) API key pair in `~/.oci/config` (default); (2) browser-based session token via `oci session authenticate` — good for MFA, token expires after 1 hour (max 24 h with refresh); (3) instance principals — no key file needed, add `--auth instance_principal` when running on an OCI VM with an appropriate IAM policy.
 

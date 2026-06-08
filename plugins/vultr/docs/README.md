@@ -15,7 +15,7 @@ Welcome to the documentation for **Vultr (`vultr-cli`)**. This documentation is 
 ## Concepts & gotchas
 
 - **API key + IP allowlist**: Vultr enforces an IP-based access control list on API keys. Before any `vultr-cli` call works, add your current IP to the allowlist in the portal under Account → API → Access Control. Missing this is the most common cause of `403 Forbidden` errors.
-- **One API key per account**: Vultr allows only one API key per account. Use Sub-Accounts or ACL scoping to limit access; the key itself grants full account access with no per-product scoping.
+- **Multiple API keys (User Access Tokens)**: Vultr now supports multiple API keys per user, managed under Dashboard → Vultr API → User Access Tokens. Each key can be given a name and an optional expiry date. Keys can be created, listed, rotated, and deleted independently. For per-resource permission scoping, use IAM service users with attached policies instead of the legacy single-key model. The legacy single-API-key model (Account → API) still exists alongside the new token management UI.
 - **Versioned CLI release assets**: The GitHub release tarballs embed the version in the filename (e.g. `vultr-cli_v3.10.0_linux_amd64.tar.gz`). Always pin a version when scripting installs — the "latest" tarball URL pattern changes with each release.
 - **Stopped instances still bill**: Powering off a Vultr instance does NOT stop billing. You must `vultr-cli instance delete <id>` to fully destroy it and end charges.
 - **Object storage is S3-compatible**: Vultr Object Storage exposes an S3-compatible API. Standard S3 tools (`s3cmd`, AWS SDK, etc.) work with it. See the S3 compatibility matrix: https://docs.vultr.com/products/cloud-storage/object-storage/s3-compatibility-matrix
