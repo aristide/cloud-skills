@@ -129,10 +129,15 @@ gcloud storage rm -r gs://my-unique-bucket/my-dir/
 ### Signed URLs (temporary public access)
 
 ```bash
+# Sign with a downloaded service account key file
 gcloud storage sign-url gs://my-unique-bucket/file.txt \
   --duration=1h \
-  --private-key-file=key.json \
-  --service-account=sa@project.iam.gserviceaccount.com
+  --private-key-file=key.json
+
+# Sign by impersonating a service account (no key file needed)
+gcloud storage sign-url gs://my-unique-bucket/file.txt \
+  --duration=1h \
+  --impersonate-service-account=sa@project.iam.gserviceaccount.com
 ```
 
 ## Beyond the basics

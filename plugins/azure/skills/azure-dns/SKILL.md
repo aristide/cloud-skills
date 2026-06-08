@@ -17,13 +17,20 @@ az network dns zone create \
   --name <zone-name>       # e.g. example.com
 ```
 
-For a **private** zone (resolves only within linked VNets):
+For a **private** zone (resolves only within linked VNets), use the dedicated `az network private-dns` command group — `--zone-type Private` was removed from `az network dns zone create`:
 
 ```bash
-az network dns zone create \
+az network private-dns zone create \
   --resource-group <rg> \
-  --name <zone-name> \
-  --zone-type Private
+  --name <zone-name>
+
+# Link the private zone to a VNet so it resolves inside that network
+az network private-dns link vnet create \
+  --resource-group <rg> \
+  --name <link-name> \
+  --zone-name <zone-name> \
+  --virtual-network <vnet-name> \
+  --registration-enabled false
 ```
 
 ### List and inspect zones

@@ -76,8 +76,8 @@ scw k8s cluster upgrade <cluster-id> version=1.32.0 region=fr-par
 # Delete cluster only (node pools are also removed)
 scw k8s cluster delete <cluster-id> region=fr-par
 
-# Delete cluster and all associated Block volumes (persistent volumes)
-scw k8s cluster delete <cluster-id> with-block-volumes=true region=fr-par
+# Delete cluster and all associated volumes, empty Private Networks, and LBs
+scw k8s cluster delete <cluster-id> with-additional-resources=true region=fr-par
 ```
 
 ## Kubeconfig

@@ -49,7 +49,7 @@ Include live power state:
 ```bash
 az vm list -d -o table          # -d / --show-details adds powerState + public IP
 az vm get-instance-view -g <rg> -n <vm-name> \
-  --query 'instanceView.statuses[?starts_with(code, `PowerState`)].displayStatus' -o tsv
+  --query "instanceView.statuses[?starts_with(code, 'PowerState/')].displayStatus" -o tsv
 ```
 
 ## Power Management

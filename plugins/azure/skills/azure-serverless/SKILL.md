@@ -101,9 +101,15 @@ az functionapp restart -g <rg> -n <functionapp-name>
 ## View Logs
 
 ```bash
-# Stream live logs (requires Application Insights or built-in logging)
-az functionapp log tail -g <rg> -n <functionapp-name>
+# Stream live logs via Azure Functions Core Tools
+func azure functionapp logstream <functionapp-name>
+
+# View deployment logs via the CLI
+az functionapp log deployment list -g <rg> -n <functionapp-name>
+az functionapp log deployment show -g <rg> -n <functionapp-name>
 ```
+
+Note: `az functionapp log tail` does not exist. Use `func azure functionapp logstream` (Core Tools) to stream live execution logs. The `az functionapp log` group only exposes deployment logs.
 
 ## Delete a Function App
 

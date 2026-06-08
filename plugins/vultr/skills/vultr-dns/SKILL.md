@@ -16,7 +16,7 @@ All commands use `vultr-cli dns <sub-group> ...`. Confirm exact flags with `vult
 vultr-cli dns domain list
 
 # Add a domain (creates the zone; update your registrar's NS records to Vultr after this)
-vultr-cli dns domain create <domain.com>
+vultr-cli dns domain create --domain <domain.com>
 
 # Inspect or remove
 vultr-cli dns domain get    <domain.com>
@@ -26,10 +26,11 @@ vultr-cli dns domain delete <domain.com>
 DNSSEC and SOA management:
 
 ```bash
-vultr-cli dns domain dnssec      <domain.com>            # enable/disable DNSSEC
-vultr-cli dns domain dnssec-info <domain.com>            # show DS records to add at registrar
+vultr-cli dns domain dnssec <domain.com> --enabled    # enable DNSSEC
+vultr-cli dns domain dnssec <domain.com> --disabled   # disable DNSSEC
+vultr-cli dns domain dnssec-info <domain.com>         # show DS records to add at registrar
 vultr-cli dns domain soa-info    <domain.com>
-vultr-cli dns domain soa-update  <domain.com> --nsprimary ns1.vultr.com --email admin@domain.com
+vultr-cli dns domain soa-update  <domain.com> --ns-primary ns1.vultr.com --email admin@domain.com
 ```
 
 ## Records
@@ -106,7 +107,7 @@ vultr-cli instance create --region ewr --plan vc2-1c-1gb --os 2284 --host myapp
 vultr-cli instance get <instance-id> -o json | jq -r '.instance.main_ip'
 
 # 2. Add/update the domain
-vultr-cli dns domain create myapp.example.com
+vultr-cli dns domain create --domain myapp.example.com
 
 # 3. Add the A record
 vultr-cli dns record create myapp.example.com \

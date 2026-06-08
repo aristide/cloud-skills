@@ -141,8 +141,8 @@ aws ssm get-parameters \
   --names /aws/service/ami-amazon-linux-latest/al2023-ami-kernel-default-x86_64 \
   --query 'Parameters[0].Value' --output text
 
-aws ec2 describe-images --owners amazon \
-  --filters "Name=name,Values=ubuntu/images/hvm-ssd/*22.04*" \
+aws ec2 describe-images --owners 099720109477 \
+  --filters "Name=name,Values=ubuntu/images/hvm-ssd-gp3/ubuntu-noble-24.04-amd64-server-*" \
   --query 'sort_by(Images,&CreationDate)[-1].ImageId' --output text
 ```
 

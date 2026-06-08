@@ -94,8 +94,8 @@ Find Scaleway resources that are likely wasting money and help the user remove t
    # Delete a Load Balancer
    scw lb lb delete <lb-id> region=fr-par
 
-   # Delete a Kubernetes cluster (add with-block-volumes=true to also remove PVs)
-   scw k8s cluster delete <cluster-id> with-block-volumes=true region=fr-par
+   # Delete a Kubernetes cluster (add with-additional-resources=true to also remove volumes, empty Private Networks and LBs)
+   scw k8s cluster delete <cluster-id> with-additional-resources=true region=fr-par
    ```
 
 5. After each category is cleared, re-run the relevant list command to confirm the items are gone.

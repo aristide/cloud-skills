@@ -48,8 +48,8 @@ linode-cli lke cluster-update <cluster-id> --label new-label
 # List available versions
 linode-cli lke versions-list
 
-# Recycle nodes after upgrading (rolling restart of all node pool nodes)
-linode-cli lke cluster-recycle <cluster-id>
+# Recycle all nodes in a cluster after upgrading (rolling restart):
+linode-cli lke cluster-nodes-recycle <cluster-id>
 ```
 
 ### Delete a cluster

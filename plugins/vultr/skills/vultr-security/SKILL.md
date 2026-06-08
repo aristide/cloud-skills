@@ -54,7 +54,7 @@ vultr-cli firewall group list
 vultr-cli firewall group create --description "web-servers"
 vultr-cli firewall rule create <group-id> \
   --protocol tcp --port "22" \
-  --subnet "0.0.0.0" --subnet-size 0 --type v4
+  --subnet "0.0.0.0" --size 0 --ip-type v4
 ```
 
 Attach a firewall group to an instance at create time with `--firewall-group <group-id>`.
@@ -68,7 +68,7 @@ Tags are free-form strings attached to instances for labelling, cost allocation,
 vultr-cli instance create ... --tags env:prod,team:backend
 
 # Update tags on an existing instance
-vultr-cli instance update <instance-id> --tags env:prod,team:backend,app:api
+vultr-cli instance tags <instance-id> --tags env:prod,team:backend,app:api
 
 # Filter list output by tag (use jq for client-side filtering)
 vultr-cli instance list -o json | jq '[.instances[] | select(.tags[] | contains("env:prod"))]'

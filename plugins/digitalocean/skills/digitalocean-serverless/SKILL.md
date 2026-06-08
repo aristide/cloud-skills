@@ -91,19 +91,42 @@ doctl serverless activations get <activation-id>
 
 ## Triggers (Scheduled Functions)
 
-Triggers fire functions on a cron schedule.
+Triggers fire functions on a cron schedule. There is no `doctl serverless triggers create` CLI command — triggers are defined in `project.yml` and deployed via `doctl serverless deploy`.
+
+Add a trigger to `project.yml` under the function:
+
+```yaml
+packages:
+  - name: hello
+    functions:
+      - name: world
+        triggers:
+          - name: my-trigger
+            sourceType: scheduler
+            sourceDetails:
+              cron: "0 9 * * 1-5"
+```
+
+Then deploy:
 
 ```bash
-# Create a cron trigger
-doctl serverless triggers create my-trigger \
-  --function hello/world \
-  --cron "0 9 * * 1-5"
+doctl serverless deploy my-project
+```
 
-# List triggers
+To inspect existing triggers (read-only):
+
+```bash
+# List triggers in the connected namespace
 doctl serverless triggers list
 
-# Delete a trigger
-doctl serverless triggers delete my-trigger
+# Get details of a specific trigger
+doctl serverless triggers get my-trigger
+```
+
+To remove a trigger, remove it from `project.yml` and redeploy, or undeploy the function:
+
+```bash
+doctl serverless undeploy hello/world
 ```
 
 ## Delete Functions

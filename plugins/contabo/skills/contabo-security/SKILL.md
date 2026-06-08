@@ -90,18 +90,16 @@ cntb create tag --name "<tag-name>"
 ### Assign a tag to a resource
 
 ```bash
-cntb create tagAssignment \
-  --tagId <tag-id> \
-  --resourceId <resource-id> \
-  --resourceType instance
+cntb create tagAssignment <tag-id> <resourceType> <resource-id>
 ```
 
-Common `--resourceType` values: `instance`, `objectStorage` (verify with `cntb create tagAssignment --help`).
+Arguments are positional (verify order with `cntb create tagAssignment --help`).
+Common `resourceType` values: `instance`, `objectStorage`.
 
 ### List tag assignments
 
 ```bash
-cntb get tagAssignments --tagId <tag-id>
+cntb get tagAssignments <tag-id>
 ```
 
 ### Delete a tag

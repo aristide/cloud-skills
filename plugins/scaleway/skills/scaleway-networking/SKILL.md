@@ -143,7 +143,7 @@ For HTTPS, add a TLS certificate to the frontend:
 scw lb certificate create \
   lb-id=<lb-id> \
   name=my-cert \
-  letsencrypt.common-name=example.com \
+  letsencrypt-common-name=example.com \
   region=fr-par
 
 scw lb frontend update <frontend-id> \

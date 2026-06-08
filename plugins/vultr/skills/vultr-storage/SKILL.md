@@ -23,7 +23,7 @@ vultr-cli block-storage create \
   --label  "my-data-vol" \
   --block-type high_perf     # high_perf (default) or storage_opt
 
-vultr-cli block-storage attach <block-storage-id> --instance-id <instance-id>
+vultr-cli block-storage attach <block-storage-id> --instance <instance-id>
 ```
 
 After attaching, format and mount inside the instance (the device typically appears as `/dev/vdb`):

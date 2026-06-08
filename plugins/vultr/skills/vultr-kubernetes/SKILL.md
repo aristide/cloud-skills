@@ -88,7 +88,9 @@ vultr-cli kubernetes node-pool delete <cluster-id> <node-pool-id>
 Manage individual nodes within a pool:
 
 ```bash
-vultr-cli kubernetes node-pool node list   <cluster-id> <node-pool-id>
+# Delete or recycle a specific node
+vultr-cli kubernetes node-pool node delete  <cluster-id> <node-pool-id> <node-id>
+vultr-cli kubernetes node-pool node recycle <cluster-id> <node-pool-id> <node-id>
 ```
 
 ## Version Upgrades

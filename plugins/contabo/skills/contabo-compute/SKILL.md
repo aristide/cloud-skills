@@ -100,7 +100,7 @@ cntb delete snapshot <instance-id> <snapshot-id>
 ```bash
 cntb get images                       # standard + your custom images
 cntb get image <image-id>
-cntb create image --name <name> --imageUrl <url> --osType <type>   # upload a custom image
+cntb create image --name <name> --url <url> --osType <type> --version <version>   # upload a custom image
 ```
 
 Use the resulting image UUID as `--imageId` when creating or reinstalling.

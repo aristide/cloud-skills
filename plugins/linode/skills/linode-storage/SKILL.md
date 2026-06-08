@@ -78,7 +78,7 @@ linode-cli object-storage keys-create \
 # Create a key scoped to specific buckets
 linode-cli object-storage keys-create \
   --label scoped-key \
-  --bucket_access '[{"cluster":"us-east-1","bucket_name":"my-bucket","permissions":"read_write"}]'
+  --bucket_access '[{"region":"us-east","bucket_name":"my-bucket","permissions":"read_write"}]'
 
 # Delete an access key
 linode-cli object-storage keys-delete <key-id>
@@ -90,19 +90,19 @@ linode-cli object-storage keys-delete <key-id>
 # List all buckets
 linode-cli object-storage buckets-list
 
-# Create a bucket (cluster IDs differ from region IDs, e.g. us-east-1, eu-central-1)
-linode-cli object-storage bucket-create \
-  --cluster us-east-1 \
+# Create a bucket (use --region; --cluster is deprecated. Region IDs e.g. us-east, eu-central)
+linode-cli object-storage buckets-create \
+  --region us-east \
   --label my-bucket
 
 # View bucket details
-linode-cli object-storage bucket-view <cluster-id> <bucket-label>
+linode-cli object-storage buckets-view <region-id> <bucket-label>
 
 # List objects in a bucket
-linode-cli object-storage object-list <cluster-id> <bucket-label>
+linode-cli object-storage object-list <region-id> <bucket-label>
 
 # Delete a bucket (must be empty first)
-linode-cli object-storage bucket-delete <cluster-id> <bucket-label>
+linode-cli object-storage buckets-delete <region-id> <bucket-label>
 
 # List available Object Storage clusters (endpoints)
 linode-cli object-storage clusters-list
@@ -129,4 +129,4 @@ s3cmd --access_key=<key> --secret_key=<secret> \
 
 ## Beyond the basics
 
-Run `linode-cli volumes --help` or `linode-cli object-storage --help` for the full flag reference. For attaching volumes to LKE clusters, see the `linode-kubernetes` skill. For backups of Linode instances (managed snapshot service), enable backups at instance creation time (`--backups_enabled true`) or via `linode-cli linodes enable-backups <id>`.
+Run `linode-cli volumes --help` or `linode-cli object-storage --help` for the full flag reference. For attaching volumes to LKE clusters, see the `linode-kubernetes` skill. For backups of Linode instances (managed snapshot service), enable backups at instance creation time (`--backups_enabled true`) or via `linode-cli linodes backups-enable <id>`.

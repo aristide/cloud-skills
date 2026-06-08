@@ -81,7 +81,10 @@ gcloud run services update-traffic my-service \
 
 ```bash
 gcloud run services logs read my-service --region us-central1
-gcloud run services logs tail my-service --region us-central1
+
+# Stream live logs via Cloud Logging (gcloud run services logs tail is not available)
+gcloud logging read "resource.type=cloud_run_revision AND resource.labels.service_name=my-service" \
+  --project PROJECT_ID --format='table(timestamp,textPayload)' --freshness=1h
 ```
 
 ### Delete a service

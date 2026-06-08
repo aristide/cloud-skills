@@ -77,7 +77,7 @@ doctl compute snapshot delete <snapshot-id>
 
 ## Spaces Object Storage
 
-Spaces is DigitalOcean's S3-compatible object storage. `doctl` does not manage Spaces buckets directly. Use the AWS CLI pointed at the Spaces endpoint, or `s3cmd`.
+Spaces is DigitalOcean's S3-compatible object storage. `doctl spaces` exists but is limited to managing Spaces **access keys** (`doctl spaces keys`). Bucket creation, listing, deletion, and object transfers are not supported by doctl — use the AWS CLI pointed at the Spaces endpoint, or `s3cmd`.
 
 ### Using the AWS CLI
 

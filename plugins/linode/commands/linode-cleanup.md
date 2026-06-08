@@ -77,10 +77,12 @@ Find Linode resources that are likely wasting money, and help the user remove th
    linode-cli lke cluster-delete <cluster-id>
 
    # Delete an Object Storage bucket (must be empty first)
-   linode-cli object-storage bucket-delete <cluster-id> <bucket-label>
+   linode-cli object-storage buckets-delete <region-id> <bucket-label>
 
-   # Delete a manual snapshot (backup)
-   linode-cli linodes snapshot-delete <linode-id> <snapshot-id>
+   # Delete a manual snapshot: linode-cli has no individual snapshot-delete command.
+   # The only CLI option is to cancel the entire Backup service (deletes ALL backups):
+   #   linode-cli linodes backups-cancel <linode-id>
+   # To delete just a snapshot, use the Cloud Manager UI or take a new snapshot (overwrites the old one).
    ```
 
 Never delete in bulk without per-category confirmation. The safety hook will also warn on each destructive call. When unsure whether something is truly orphaned (e.g. a volume with a meaningful label, or an LKE cluster with recent activity), flag it for the user rather than removing it.

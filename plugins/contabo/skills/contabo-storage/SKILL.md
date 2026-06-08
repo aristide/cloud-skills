@@ -35,23 +35,38 @@ The output includes the S3 endpoint URL, region, and your access credentials (ac
 ```bash
 cntb create objectStorage \
   --region <region> \
-  --totalPurchasedSpaceInTB <size>
+  --totalPurchasedSpaceTB <size>
 ```
 
 Common flags (verify with `cntb create objectStorage --help`):
 - `--region <region>` - Region code (e.g. `EU`, `US-central`, `SIN`)
-- `--totalPurchasedSpaceInTB <n>` - Storage size in terabytes (e.g. `1`, `2`, `5`)
+- `--totalPurchasedSpaceTB <n>` - Storage size in terabytes (e.g. `1`, `2`, `5`)
+- `--displayName <name>` - Friendly display name
+- `--scalingState <enabled|disabled>` - Enable autoscaling (default: `disabled`)
+- `--scalingLimitTB <n>` - Autoscaling size limit in TB (required when `--scalingState enabled`)
 
 This opens a billing contract. Note the returned `s3Url`, `accessKey`, and `secretKey` â€” store them securely (see `contabo-security` for secret management).
 
-### Update
+### Update (rename)
 
 ```bash
 cntb update objectStorage <objectStorage-id> \
-  --totalPurchasedSpaceInTB <new-size>
+  --displayName "<new-name>"
 ```
 
-Use to resize (upgrade) storage capacity.
+Use `update` to rename an object storage. To resize capacity, use `resize`:
+
+### Resize
+
+```bash
+cntb resize objectStorage <objectStorage-id> \
+  --totalPurchasedSpaceTB <new-size>
+```
+
+Optional resize flags:
+- `--totalPurchasedSpaceTB <n>` - New capacity in terabytes
+- `--scalingState <enabled|disabled>` - Toggle autoscaling
+- `--scalingLimitTB <n>` - Autoscaling cap in TB
 
 ### Cancel (terminate the subscription)
 
@@ -87,6 +102,7 @@ Other S3-compatible tools (rclone, s3cmd, MinIO client `mc`) work the same way â
 cntb get objectStorages --help
 cntb create objectStorage --help
 cntb update objectStorage --help
+cntb resize objectStorage --help
 ```
 
 For instance snapshots, see the `contabo-compute` skill. For storing object storage credentials as named secrets, see `contabo-security`.

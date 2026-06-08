@@ -97,9 +97,7 @@ az container delete -g <rg> -n <container-name> --yes
 
 ## Azure Container Apps (ACA)
 
-Container Apps is a serverless platform for HTTP APIs, microservices, and event-driven workloads with built-in autoscaling. It requires the `containerapp` extension.
-
-### Install the extension
+Container Apps is a serverless platform for HTTP APIs, microservices, and event-driven workloads with built-in autoscaling. Core `az containerapp` commands (create, list, delete, logs, update) are now GA and built into the Azure CLI — no extension required for everyday use. Install the extension only if you need preview features (e.g. `az containerapp debug`, Java workloads, session management):
 
 ```bash
 az extension add --name containerapp --upgrade

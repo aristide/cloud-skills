@@ -75,10 +75,11 @@ A stopped container instance does not bill for compute, but attached storage may
 
 ```bash
 oci container-instances container retrieve-logs \
-  --container-id <container-ocid>
+  --container-id <container-ocid> \
+  --file -
 ```
 
-Find `<container-ocid>` from `oci container-instances container list` above.
+`--file -` writes to stdout; pass a filename instead to save to a file. Find `<container-ocid>` from `oci container-instances container list` above.
 
 ## OCI Container Registry (OCIR)
 

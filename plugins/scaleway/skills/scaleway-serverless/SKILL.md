@@ -152,19 +152,50 @@ curl "https://$endpoint" \
   -H "X-Auth-Token: $SCW_SECRET_KEY"
 ```
 
-## Triggers (Cron / HTTP)
+## Cron Scheduling
+
+Scaleway uses a dedicated `scw function cron` sub-product for time-based scheduling (not `trigger`).
+Triggers are for event sources (SQS, NATS) only.
+
+```bash
+# List crons for a function
+scw function cron list region=fr-par
+
+# Create a cron that invokes a function on a schedule
+scw function cron create \
+  function-id=<function-id> \
+  name=every-hour \
+  schedule="0 * * * *" \
+  region=fr-par
+
+# Pass JSON arguments to the function on each invocation
+scw function cron create \
+  function-id=<function-id> \
+  name=daily-report \
+  schedule="0 9 * * *" \
+  args='{"env":"prod"}' \
+  region=fr-par
+
+# Get / delete a cron
+scw function cron get <cron-id> region=fr-par
+scw function cron delete <cron-id> region=fr-par
+```
+
+## Event Triggers (SQS / NATS)
+
+`scw function trigger` is for message-queue event sources, not cron:
 
 ```bash
 # List triggers
 scw function trigger list region=fr-par
 
-# Create a cron trigger
+# Create an SQS trigger
 scw function trigger create \
   function-id=<function-id> \
-  name=every-hour \
-  type=schedule \
-  schedule-config.schedule="0 * * * *" \
-  schedule-config.timezone="Europe/Paris" \
+  name=sqs-trigger \
+  scw-sqs-config.queue=my-queue \
+  scw-sqs-config.mnq-project-id=<project-id> \
+  scw-sqs-config.mnq-region=fr-par \
   region=fr-par
 
 # Delete a trigger

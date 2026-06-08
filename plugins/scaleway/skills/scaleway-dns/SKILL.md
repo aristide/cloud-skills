@@ -36,7 +36,7 @@ scw dns zone delete <dns-zone>
 
 ## DNS Records
 
-Records live within a zone. Use `scw dns record` to manage them. The key verbs are `list`, `add`, `set`, and `delete`.
+Records live within a zone. Use `scw dns record` to manage them. The key verbs are `list`, `add`, `set`, `delete`, and `clear` (wipes the whole zone).
 
 ### List Records
 
@@ -52,56 +52,57 @@ scw dns record list <dns-zone> type=CNAME
 ### Add Records
 
 `add` appends a new record (or adds an additional IP to an existing A/AAAA record of the same name).
+The fields are flat positional args — no nested `records.N.*` syntax here.
 
 ```bash
 # A record
 scw dns record add <dns-zone> \
-  records.0.name=www \
-  records.0.type=A \
-  records.0.data=203.0.113.10 \
-  records.0.ttl=3600
+  name=www \
+  type=A \
+  data=203.0.113.10 \
+  ttl=3600
 
 # AAAA record
 scw dns record add <dns-zone> \
-  records.0.name=www \
-  records.0.type=AAAA \
-  records.0.data=2001:db8::1 \
-  records.0.ttl=3600
+  name=www \
+  type=AAAA \
+  data=2001:db8::1 \
+  ttl=3600
 
 # CNAME record
 scw dns record add <dns-zone> \
-  records.0.name=blog \
-  records.0.type=CNAME \
-  records.0.data=www.example.com. \
-  records.0.ttl=3600
+  name=blog \
+  type=CNAME \
+  data=www.example.com. \
+  ttl=3600
 
 # MX record (data includes priority and host)
 scw dns record add <dns-zone> \
-  records.0.name="" \
-  records.0.type=MX \
-  records.0.data="10 mail.example.com." \
-  records.0.ttl=3600
+  name="" \
+  type=MX \
+  data="10 mail.example.com." \
+  ttl=3600
 
 # TXT record
 scw dns record add <dns-zone> \
-  records.0.name="" \
-  records.0.type=TXT \
-  records.0.data="v=spf1 include:_spf.example.com ~all" \
-  records.0.ttl=3600
+  name="" \
+  type=TXT \
+  data="v=spf1 include:_spf.example.com ~all" \
+  ttl=3600
 ```
 
 Use `name=""` for the zone apex (root of the domain).
 
 ### Set (Overwrite) Records
 
-`set` replaces an existing record (same name + type) entirely:
+`set` replaces an existing record (same name + type) entirely. Use `values.{index}=` to supply the new value(s):
 
 ```bash
 scw dns record set <dns-zone> \
-  records.0.name=www \
-  records.0.type=A \
-  records.0.data=203.0.113.20 \
-  records.0.ttl=300
+  name=www \
+  type=A \
+  values.0=203.0.113.20 \
+  ttl=300
 ```
 
 ### Delete Records
@@ -110,18 +111,18 @@ scw dns record set <dns-zone> \
 
 ```bash
 scw dns record delete <dns-zone> \
-  records.0.name=www \
-  records.0.type=A \
-  records.0.data=203.0.113.10
+  name=www \
+  type=A \
+  data=203.0.113.10
 ```
 
-To clear all records of a given name and type, use `clear`:
+To clear **all records in the entire zone** (irreversible), use `clear`:
 
 ```bash
-scw dns record clear <dns-zone> \
-  records.0.name=www \
-  records.0.type=A
+scw dns record clear <dns-zone>
 ```
+
+`clear` takes no per-record filters — it wipes every record in the zone.
 
 ## Common Record Types Supported
 

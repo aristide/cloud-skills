@@ -7,7 +7,7 @@ description: "Use when the user needs to manage Google Cloud Functions — deplo
 
 Cloud Functions is GCP's FaaS (Function-as-a-Service) offering. Enable the API: `gcloud services enable cloudfunctions.googleapis.com cloudbuild.googleapis.com`.
 
-**Gen1 vs Gen2:** Gen2 (recommended for new workloads) is built on Cloud Run and supports longer timeouts, larger instances, and concurrency. Pass `--gen2` to use Gen2. Gen1 is the default when `--gen2` is omitted. Commands are the same unless noted.
+**Gen1 vs Gen2:** Gen2 (recommended for new workloads) is built on Cloud Run and supports longer timeouts, larger instances, and concurrency. The generation flag varies by subcommand: `deploy` and `logs read` use `--gen2`; `describe` and `list` use `--v2`. `call` and `delete` detect the generation automatically from the function's metadata.
 
 ## Deploy a Function
 
@@ -55,7 +55,6 @@ gcloud functions deploy my-gcs-function \
   --gen2 \
   --runtime python312 \
   --trigger-bucket my-bucket \
-  --trigger-event-filters="type=google.cloud.storage.object.v1.finalized" \
   --entry-point process_file \
   --source ./my-function-dir \
   --region us-central1
@@ -84,20 +83,14 @@ gcloud functions list \
 gcloud functions describe my-function --region us-central1
 
 # Gen2 function info
-gcloud functions describe my-function --gen2 --region us-central1
+gcloud functions describe my-function --v2 --region us-central1
 ```
 
 ## Invoke (Call) a Function
 
 ```bash
-# HTTP function — prints response body
+# HTTP function — prints response body (works for Gen1 and Gen2)
 gcloud functions call my-function \
-  --region us-central1 \
-  --data '{"name":"World"}'
-
-# Gen2 HTTP function
-gcloud functions call my-function \
-  --gen2 \
   --region us-central1 \
   --data '{"name":"World"}'
 ```
@@ -117,13 +110,13 @@ curl -H "Authorization: Bearer $(gcloud auth print-identity-token)" \
 ## View Logs
 
 ```bash
-# Recent logs
+# Recent logs (Gen1 and Gen2)
 gcloud functions logs read my-function --region us-central1
 
-# Stream live logs
+# Fetch more entries (max 1000)
 gcloud functions logs read my-function --region us-central1 --limit 50
 
-# Gen2 — logs are in Cloud Logging; use gcloud logging as well
+# Gen2 — logs are also available via Cloud Logging (richer filtering)
 gcloud logging read "resource.type=cloud_run_revision AND resource.labels.function_name=my-function" \
   --limit 50 --format='table(timestamp,textPayload)'
 ```
@@ -144,9 +137,6 @@ gcloud functions deploy my-function \
 
 ```bash
 gcloud functions delete my-function --region us-central1
-
-# Gen2
-gcloud functions delete my-function --gen2 --region us-central1
 ```
 
 ## List Available Runtimes

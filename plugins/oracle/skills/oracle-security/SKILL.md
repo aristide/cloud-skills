@@ -43,12 +43,13 @@ oci certs-mgmt certificate create-by-importing-config \
   --name my-cert \
   --certificate-pem "$(cat cert.pem)" \
   --private-key-pem "$(cat key.pem)" \
-  --chain-pem "$(cat chain.pem)"
+  --cert-chain-pem "$(cat chain.pem)"
 
 # Create an internally-issued certificate
-oci certs-mgmt certificate create-by-issuing-internally \
+oci certs-mgmt certificate create-certificate-issued-by-internal-ca \
   --compartment-id <compartment-ocid> \
   --name my-internal-cert \
+  --certificate-profile-type TLS_SERVER \
   --issuer-certificate-authority-id <ca-ocid> \
   --validity '{"timeOfValidityNotAfter":"2027-01-01T00:00:00Z"}' \
   --subject '{"commonName":"myservice.example.com"}'

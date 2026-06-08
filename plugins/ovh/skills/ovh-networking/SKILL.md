@@ -121,6 +121,8 @@ Unassociated floating IPs still bill on OVH Public Cloud. Release them when not 
 
 ## Load Balancers (Octavia)
 
+Octavia is available in all major OVHcloud Public Cloud regions (GRA, SBG, BHS, WAW, PAR, etc.) but may be absent in some local-zone regions. Confirm availability in the OVHcloud control panel under **Network Services** or check `openstack loadbalancer list` — an error like "endpoint not found" means Octavia is not enabled in that region.
+
 ```bash
 # Create a load balancer on a private subnet
 openstack loadbalancer create --name my-lb \

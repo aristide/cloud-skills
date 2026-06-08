@@ -15,7 +15,7 @@ Vultr has two VPC generations. `vpc` is the original; `vpc2` is the current gene
 
 ```bash
 vultr-cli vpc list
-vultr-cli vpc create --region <region-id> --description "my-vpc" --v4-subnet "10.0.0.0" --v4-subnet-mask 24
+vultr-cli vpc create --region <region-id> --description "my-vpc" --subnet "10.0.0.0" --size 24
 vultr-cli vpc get <vpc-id>
 vultr-cli vpc update <vpc-id> --description "updated-name"
 vultr-cli vpc delete <vpc-id>
@@ -57,14 +57,14 @@ vultr-cli firewall rule create <group-id> \
   --protocol tcp \
   --port     "80" \
   --subnet   "0.0.0.0" \
-  --subnet-size 0 \
-  --type     v4
+  --size     0 \
+  --ip-type  v4
 vultr-cli firewall rule get    <group-id> <rule-id>
 vultr-cli firewall rule delete <group-id> <rule-id>
 ```
 
 Common `--protocol` values: `tcp`, `udp`, `icmp`, `gre`, `esp`, `ah`.  
-Use `--subnet 0.0.0.0 --subnet-size 0` to allow all IPv4 sources.
+Use `--subnet 0.0.0.0 --size 0` to allow all IPv4 sources.
 
 Attach a firewall group to an instance at creation time:
 
@@ -89,7 +89,7 @@ vultr-cli reserved-ip delete <reserved-ip-id>
 Convert an existing instance IP to a reserved IP (so it survives instance deletion):
 
 ```bash
-vultr-cli reserved-ip convert --ip <ip-address> --region <region-id> --type v4
+vultr-cli reserved-ip convert --ip <ip-address> --label "converted-ip"
 ```
 
 ## Load Balancers
@@ -112,10 +112,15 @@ Manage forwarding rules and firewall rules on an existing LB:
 ```bash
 vultr-cli load-balancer forwarding list   <lb-id>
 vultr-cli load-balancer forwarding create <lb-id> \
-  --forwarding-rules "frontend_protocol:https,frontend_port:443,backend_protocol:http,backend_port:80"
+  --frontend-protocol https \
+  --frontend-port     443 \
+  --backend-protocol  http \
+  --backend-port      80
 vultr-cli load-balancer forwarding delete <lb-id> <rule-id>
 
+# Firewall rules are read-only via CLI (list/get only):
 vultr-cli load-balancer firewall list <lb-id>
+vultr-cli load-balancer firewall get  <lb-id> <rule-id>
 ```
 
 ## Beyond the basics

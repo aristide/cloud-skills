@@ -72,7 +72,9 @@ vultr-cli container-registry repository list <registry-id>
 vultr-cli container-registry repository get <registry-id> <repository-name>
 
 # Update repository description
-vultr-cli container-registry repository update <registry-id> <repository-name>
+vultr-cli container-registry repository update <registry-id> \
+  --image-name <repository-name> \
+  --description "new description"
 
 # Delete a repository (removes all its tags/images)
 vultr-cli container-registry repository delete <registry-id> <repository-name>

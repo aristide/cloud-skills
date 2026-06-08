@@ -90,7 +90,7 @@ doctl compute reserved-ip create --region nyc3
 doctl compute reserved-ip list
 
 # Assign / unassign
-doctl compute reserved-ip-action assign   <reserved-ip> --droplet-id <id>
+doctl compute reserved-ip-action assign   <reserved-ip> <droplet-id>
 doctl compute reserved-ip-action unassign <reserved-ip>
 
 # Delete (must be unassigned first)

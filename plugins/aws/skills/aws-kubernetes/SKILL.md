@@ -98,8 +98,10 @@ kubectl get namespaces
 ## Kubernetes Version Upgrades
 
 ```bash
-# Check available versions
-aws eks describe-addon-versions --query 'addons[0].addonVersions[0]' --output text
+# Check available Kubernetes versions for EKS clusters
+aws eks describe-cluster-versions \
+  --query 'clusterVersions[].{version:clusterVersion,status:versionStatus,default:defaultVersion}' \
+  --output table
 
 # Upgrade the control plane first
 aws eks update-cluster-version --name my-cluster --kubernetes-version 1.30
